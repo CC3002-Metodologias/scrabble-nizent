@@ -32,6 +32,8 @@ class ScrabbleIntTest extends AbstractScrabbleTypeTest{
                 new ScrabbleInt(intNegativeBinParam),
                 floatTest);
         assertEquals((new ScrabbleInt(intNegativeBinParam)).hashCode(), intTest.hashCode());
+        // numbers of different class are compared by its value
+        assertEquals(intTest, new ScrabbleFloat(intParam));
     }
 
     @Test

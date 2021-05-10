@@ -12,8 +12,8 @@ cl/uchile/dcc/scrabble/models/ScrabbleBool.java
  cl.uchile.dcc.scrabble.models.ScrabbleBool
 module-info.java
  module-info
-cl/uchile/dcc/scrabble/test/ScrabbleIntTest.java
- cl.uchile.dcc.scrabble.test.ScrabbleIntTest
+cl/uchile/dcc/scrabble/test/ScrabbleFloatTest.java
+ cl.uchile.dcc.scrabble.test.ScrabbleFloatTest
 cl/uchile/dcc/scrabble/models/ScrabbleFloat.java
  cl.uchile.dcc.scrabble.models.ScrabbleFloat
 cl/uchile/dcc/scrabble/test/ScrabbleBoolTest.java
@@ -32,5 +32,5 @@ cl/uchile/dcc/scrabble/models/AbstractNumber.java
  cl.uchile.dcc.scrabble.models.AbstractNumber
 cl/uchile/dcc/scrabble/models/INumber.java
  cl.uchile.dcc.scrabble.models.INumber
-cl/uchile/dcc/scrabble/test/ScrabbleFloatTest.java
- cl.uchile.dcc.scrabble.test.ScrabbleFloatTest
+cl/uchile/dcc/scrabble/test/ScrabbleIntTest.java
+ cl.uchile.dcc.scrabble.test.ScrabbleIntTest
