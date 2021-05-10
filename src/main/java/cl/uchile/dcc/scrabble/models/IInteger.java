@@ -3,7 +3,7 @@ package cl.uchile.dcc.scrabble.models;
 /**
  * This interface represents the integer numbers that can be transformed to Binary or Int
  */
-public interface IInteger extends INumber{
+public interface IInteger<T> extends INumber<T> {
     /**
      * Transforms a Scrabble Integer to a Scrabble Binary
      * @return the equivalent Scrabble Binary object

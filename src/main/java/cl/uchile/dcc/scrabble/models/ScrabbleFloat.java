@@ -5,15 +5,14 @@ import java.util.Objects;
 /**
  * Represents a float number and its behavior
  */
-public class ScrabbleFloat extends AbstractNumber {
-    private double value;
+public class ScrabbleFloat extends AbstractNumber<Double> {
 
     /**
      * Creates a new Scrabble Float
      * @param value the double value of the Scrabble Float object
      */
     public ScrabbleFloat(double value) {
-        this.value=value;
+        super(value);
     }
 
     /**
@@ -32,19 +31,4 @@ public class ScrabbleFloat extends AbstractNumber {
         return this;
     }
 
-    /**
-     * Returns the value of the Float
-     * @return Scrabble Float double value
-     */
-    public double Value() {
-        return this.value;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Object objectValue() {
-        return this.Value();
-    }
 }

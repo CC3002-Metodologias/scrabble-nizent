@@ -6,15 +6,14 @@ import java.util.Objects;
  * Represents an String and its behavior
  * @author Nicolás Zenteno Guardia
  */
-public class ScrabbleString extends AbstractScrabbleType {
-    private String value;
+public class ScrabbleString extends AbstractScrabbleType<String> {
 
     /**
      * Creates a new Scrabble String
      * @param value String value
      */
     public ScrabbleString(String value) {
-        this.value=value;
+        super(value);
     }
 
     /**
@@ -38,21 +37,5 @@ public class ScrabbleString extends AbstractScrabbleType {
             return stringObject.Value().equals(this.Value());
         }
         return false;
-    }
-
-    /**
-     * Returns the value of the String
-     * @return
-     */
-    public String Value(){
-        return this.value;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Object objectValue() {
-        return this.value;
     }
 }

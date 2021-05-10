@@ -7,15 +7,14 @@ import java.util.Objects;
  * This class represents a binary number and its behavior
  * @author Nicolás Zenteno Guardia
  */
-public class ScrabbleBinary extends AbstractNumber implements IInteger {
-    private String value;
+public class ScrabbleBinary extends AbstractNumber<String> implements IInteger<String> {
 
     /**
      * Creates a new Binary number
      * @param value a String in 01 format
      */
     public ScrabbleBinary(String value){
-        this.value=value;
+        super(value);
     }
 
     /**
@@ -25,14 +24,6 @@ public class ScrabbleBinary extends AbstractNumber implements IInteger {
     @Override
     public int hashCode(){
         return Objects.hash(ScrabbleBinary.class);
-    }
-
-    /**
-     * Returns the value of the binary number
-     * @return binary formatted String
-     */
-    public String Value(){
-        return this.value;
     }
 
     /**
@@ -108,11 +99,4 @@ public class ScrabbleBinary extends AbstractNumber implements IInteger {
         return bit == '0' ? 0 : 1;
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Object objectValue() {
-        return this.value;
-    }
 }

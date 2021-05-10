@@ -6,15 +6,14 @@ import java.util.Objects;
  * Represents an Integer and its behavior
  * @author Nicolás Zenteno Guardia
  */
-public class ScrabbleInt extends AbstractNumber implements IInteger {
-    private int value;
+public class ScrabbleInt extends AbstractNumber<Integer> implements IInteger<Integer> {
 
     /**
      * Creates a new Scrabble Integer
      * @param value int parameter
      */
     public ScrabbleInt(int value) {
-        this.value=value;
+        super(value);
     }
 
     /**
@@ -25,7 +24,6 @@ public class ScrabbleInt extends AbstractNumber implements IInteger {
     public int hashCode(){
         return Objects.hash(ScrabbleInt.class);
     }
-
 
     /**
      * {@inheritDoc}
@@ -50,14 +48,6 @@ public class ScrabbleInt extends AbstractNumber implements IInteger {
     @Override
     public ScrabbleInt transformToScrabbleInt() {
         return this;
-    }
-
-    /**
-     * Returns the value of the object
-     * @return int value
-     */
-    public int Value(){
-        return this.value;
     }
 
     /**
@@ -108,13 +98,5 @@ public class ScrabbleInt extends AbstractNumber implements IInteger {
             comp.setCharAt(i,'0');
         }
         return comp.toString();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public Object objectValue() {
-        return this.value;
     }
 }
