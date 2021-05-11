@@ -4,15 +4,17 @@ import java.util.Objects;
 
 /**
  * Represents a float number and its behavior
+ * @author Nicolás Zenteno Guardia
  */
-public class ScrabbleFloat extends AbstractNumber<Double> {
+public class ScrabbleFloat extends AbstractNumber {
+    private double value;
 
     /**
      * Creates a new Scrabble Float
      * @param value the double value of the Scrabble Float object
      */
     public ScrabbleFloat(double value) {
-        super(value);
+        this.value=value;
     }
 
     /**
@@ -31,4 +33,12 @@ public class ScrabbleFloat extends AbstractNumber<Double> {
         return this;
     }
 
+    /**
+     * Returns the value of the Scrabble Float
+     * @return value
+     */
+    @Override
+    public Object Value(){
+        return this.value;
+    }
 }

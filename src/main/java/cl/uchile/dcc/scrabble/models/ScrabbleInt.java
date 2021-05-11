@@ -6,14 +6,15 @@ import java.util.Objects;
  * Represents an Integer and its behavior
  * @author Nicolás Zenteno Guardia
  */
-public class ScrabbleInt extends AbstractNumber<Integer> implements IInteger<Integer> {
+public class ScrabbleInt extends AbstractNumber implements IInteger {
+    private int value;
 
     /**
      * Creates a new Scrabble Integer
      * @param value int parameter
      */
     public ScrabbleInt(int value) {
-        super(value);
+        this.value = value;
     }
 
     /**
@@ -38,7 +39,7 @@ public class ScrabbleInt extends AbstractNumber<Integer> implements IInteger<Int
      */
     @Override
     public ScrabbleBinary transformToScrabbleBinary() {
-        String bin = toBinary((Integer) this.Value());
+        String bin = toBinary(Integer.valueOf(this.toString()));
         return new ScrabbleBinary(bin);
     }
 
@@ -98,5 +99,14 @@ public class ScrabbleInt extends AbstractNumber<Integer> implements IInteger<Int
             comp.setCharAt(i,'0');
         }
         return comp.toString();
+    }
+
+    /**
+     * Returns the value of the Scrabble Int
+     * @return value
+     */
+    @Override
+    public Object Value() {
+        return this.value;
     }
 }

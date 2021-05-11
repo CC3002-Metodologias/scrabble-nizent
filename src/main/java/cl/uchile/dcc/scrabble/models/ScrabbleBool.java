@@ -6,14 +6,15 @@ import java.util.Objects;
  * Represents a Boolean an its behavior
  * @author Nicolás Zenteno Guardia
  */
-public class ScrabbleBool extends AbstractScrabbleType<Boolean> {
+public class ScrabbleBool extends AbstractScrabbleType {
+    private boolean value;
 
     /**
      * Creates a new Scrabble Bool
      * @param value a boolean
      */
     public ScrabbleBool(boolean value) {
-        super(value);
+        this.value = value;
     }
 
     /**
@@ -47,4 +48,12 @@ public class ScrabbleBool extends AbstractScrabbleType<Boolean> {
         return this;
     }
 
+    /**
+     * Returns the value of the Scrabble Bool
+     * @return value
+     */
+    @Override
+    public Object Value() {
+        return this.value;
+    }
 }

@@ -5,15 +5,7 @@ package cl.uchile.dcc.scrabble.models;
  * @author Nicolás Zenteno Guardia
  */
 
-public abstract class AbstractNumber<T> extends AbstractScrabbleType<T> implements INumber<T> {
-    /**
-     * Creates a new Scrabble Number
-     *
-     * @param value String, int or double value
-     */
-    protected AbstractNumber(T value) {
-        super(value);
-    }
+public abstract class AbstractNumber extends AbstractScrabbleType implements INumber {
 
     /**
      * Check if a number is equal to another
@@ -23,7 +15,7 @@ public abstract class AbstractNumber<T> extends AbstractScrabbleType<T> implemen
     @Override
     public boolean equals(Object obj){
         if(obj instanceof INumber){
-            INumber<T> iNumber = (INumber<T>) obj;
+            INumber iNumber = (INumber) obj;
             return this.transformToScrabbleFloat().toString().equals(iNumber.transformToScrabbleFloat().toString());
         }
         return false;
