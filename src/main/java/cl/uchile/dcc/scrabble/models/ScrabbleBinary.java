@@ -109,7 +109,19 @@ public class ScrabbleBinary extends AbstractNumber implements IInteger {
         return this.value;
     }
 
+    /**
+     * Set value of Scrabble Binary
+     * @param value string with binary format
+     */
     public void setValue(String value) {
         this.value = value;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    @Override
+    public ScrabbleString transformToScrabbleString() {
+        return new ScrabbleString(this.toString());
     }
 }

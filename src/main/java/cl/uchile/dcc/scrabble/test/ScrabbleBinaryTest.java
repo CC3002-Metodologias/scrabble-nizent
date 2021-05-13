@@ -59,4 +59,9 @@ class ScrabbleBinaryTest extends AbstractScrabbleTypeTest{
         assertEquals(new ScrabbleInt(intBinParam), binaryTest.transformToScrabbleInt());
         assertEquals(new ScrabbleInt(intNegativeBinParam), (new ScrabbleBinary(negativeBinParam)).transformToScrabbleInt());
     }
+
+    @Test
+    void transformToScrabbleStringTest(){
+        assertEquals(new ScrabbleString(binaryTest.toString()),binaryTest.transformToScrabbleString());
+    }
 }

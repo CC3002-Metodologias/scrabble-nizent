@@ -120,7 +120,19 @@ public class ScrabbleInt extends AbstractNumber implements IInteger {
         return this.value;
     }
 
+    /**
+     * Set value of Scrabble Int
+     * @param value int
+     */
     public void setValue(int value) {
         this.value = value;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    @Override
+    public ScrabbleString transformToScrabbleString() {
+        return new ScrabbleString(this.toString());
     }
 }

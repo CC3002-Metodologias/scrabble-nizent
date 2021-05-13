@@ -46,4 +46,9 @@ class ScrabbleFloatTest extends AbstractScrabbleTypeTest{
         assertEquals(new ScrabbleFloat(doubleParam), floatTest.transformToScrabbleFloat());
     }
 
+    @Test
+    void transformToScrabbleStringTest(){
+        assertEquals(new ScrabbleString(floatTest.toString()),floatTest.transformToScrabbleString());
+    }
+
 }

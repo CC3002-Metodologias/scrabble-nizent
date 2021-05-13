@@ -41,4 +41,8 @@ class ScrabbleStringTest extends AbstractScrabbleTypeTest{
         assertEquals(String.valueOf(stringParam), stringTest.toString());
     }
 
+    @Test
+    void transformToScrabbleStringTest(){
+        assertEquals(new ScrabbleString(stringTest.toString()),stringTest.transformToScrabbleString());
+    }
 }

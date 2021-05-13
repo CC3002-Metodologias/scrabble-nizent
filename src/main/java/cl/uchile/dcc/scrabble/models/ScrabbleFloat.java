@@ -42,7 +42,20 @@ public class ScrabbleFloat extends AbstractNumber {
         return this.value;
     }
 
+    /**
+     * Set value of Scrabble Double
+     * @param value double
+     */
     public void setValue(double value) {
         this.value = value;
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    @Override
+    public ScrabbleString transformToScrabbleString() {
+        return new ScrabbleString(this.toString());
     }
 }

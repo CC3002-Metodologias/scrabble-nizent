@@ -49,6 +49,18 @@ public class ScrabbleString extends AbstractScrabbleType {
         return this.value;
     }
 
+    /**
+     * @inheritDoc
+     */
+    @Override
+    public ScrabbleString transformToScrabbleString() {
+        return this;
+    }
+
+    /**
+     * Set value of Scrabble String
+     * @param value string
+     */
     public void setValue(String value) {
         this.value = value;
     }

@@ -44,4 +44,9 @@ class ScrabbleBoolTest extends AbstractScrabbleTypeTest{
         assertEquals(new ScrabbleBool(boolParam), boolTest.transformToScrabbleBool());
     }
 
+    @Test
+    void transformToScrabbleStringTest(){
+        assertEquals(new ScrabbleString(boolTest.toString()),boolTest.transformToScrabbleString());
+    }
+
 }

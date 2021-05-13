@@ -57,7 +57,19 @@ public class ScrabbleBool extends AbstractScrabbleType {
         return this.value;
     }
 
+    /**
+     * Set value of Scrabble Boolean
+     * @param value boolean
+     */
     public void setValue(boolean value) {
         this.value = value;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    @Override
+    public ScrabbleString transformToScrabbleString() {
+        return new ScrabbleString(this.toString());
     }
 }
