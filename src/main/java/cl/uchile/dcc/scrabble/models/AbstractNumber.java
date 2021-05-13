@@ -14,10 +14,11 @@ public abstract class AbstractNumber extends AbstractScrabbleType implements INu
      */
     @Override
     public boolean equals(Object obj){
-        if(obj instanceof INumber){
+        if(obj instanceof AbstractNumber){
             INumber iNumber = (INumber) obj;
             return this.transformToScrabbleFloat().toString().equals(iNumber.transformToScrabbleFloat().toString());
         }
         return false;
     }
+
 }
