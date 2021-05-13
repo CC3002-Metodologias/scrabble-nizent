@@ -15,8 +15,8 @@ public abstract class AbstractNumber extends AbstractScrabbleType implements INu
     @Override
     public boolean equals(Object obj){
         if(obj instanceof AbstractNumber){
-            INumber iNumber = (INumber) obj;
-            return this.transformToScrabbleFloat().toString().equals(iNumber.transformToScrabbleFloat().toString());
+            AbstractNumber number = (AbstractNumber) obj;
+            return this.transformToScrabbleFloat().toString().equals(number.transformToScrabbleFloat().toString());
         }
         return false;
     }
