@@ -119,4 +119,8 @@ public class ScrabbleInt extends AbstractNumber implements IInteger {
     public Object Value() {
         return this.value;
     }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
 }

@@ -56,4 +56,8 @@ public class ScrabbleBool extends AbstractScrabbleType {
     public Object Value() {
         return this.value;
     }
+
+    public void setValue(boolean value) {
+        this.value = value;
+    }
 }

@@ -108,4 +108,8 @@ public class ScrabbleBinary extends AbstractNumber implements IInteger {
     public Object Value() {
         return this.value;
     }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
 }

@@ -29,6 +29,12 @@ class ScrabbleBoolTest extends AbstractScrabbleTypeTest{
     }
 
     @Test
+    void setValueTest(){
+        boolTest.setValue(!boolParam);
+        assertEquals(boolTest.Value(), !boolParam);
+    }
+
+    @Test
     void toStringTest(){
         assertEquals(Boolean.toString(boolParam), boolTest.toString());
     }

@@ -41,4 +41,8 @@ public class ScrabbleFloat extends AbstractNumber {
     public Object Value(){
         return this.value;
     }
+
+    public void setValue(double value) {
+        this.value = value;
+    }
 }

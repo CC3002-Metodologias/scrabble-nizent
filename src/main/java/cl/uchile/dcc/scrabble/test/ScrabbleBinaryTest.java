@@ -34,6 +34,12 @@ class ScrabbleBinaryTest extends AbstractScrabbleTypeTest{
     }
 
     @Test
+    void setValueTest(){
+        binaryTest.setValue(otherBinParam);
+        assertEquals(binaryTest.Value(), otherBinParam);
+    }
+
+    @Test
     void toStringTest(){
         assertEquals(String.valueOf(binParam), binaryTest.toString());
     }

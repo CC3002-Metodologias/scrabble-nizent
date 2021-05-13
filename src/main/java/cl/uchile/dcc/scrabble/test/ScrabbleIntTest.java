@@ -37,6 +37,12 @@ class ScrabbleIntTest extends AbstractScrabbleTypeTest{
     }
 
     @Test
+    void setValueTest(){
+        intTest.setValue(2*intParam);
+        assertEquals(intTest.Value(), 2*intParam);
+    }
+
+    @Test
     void toStringTest(){
         assertEquals(Integer.toString(intParam), intTest.toString());
     }

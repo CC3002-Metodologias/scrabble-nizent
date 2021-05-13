@@ -48,4 +48,8 @@ public class ScrabbleString extends AbstractScrabbleType {
     public Object Value(){
         return this.value;
     }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
 }

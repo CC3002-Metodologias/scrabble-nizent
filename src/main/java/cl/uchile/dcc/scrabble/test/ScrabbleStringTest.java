@@ -31,6 +31,12 @@ class ScrabbleStringTest extends AbstractScrabbleTypeTest{
     }
 
     @Test
+    void setValueTest(){
+        stringTest.setValue(otherStringParam);
+        assertEquals(stringTest.Value(), otherStringParam);
+    }
+
+    @Test
     void toStringTest(){
         assertEquals(String.valueOf(stringParam), stringTest.toString());
     }
