@@ -70,7 +70,7 @@ public class ScrabbleInt extends AbstractNumber implements IInteger {
      * @param positiveInteger positive integer
      * @return binary string starting with 0
      */
-    private String positiveToBinary(int positiveInteger){
+    private static String positiveToBinary(int positiveInteger){
         StringBuilder bin = new StringBuilder();
         while (positiveInteger != 0) {
             bin.insert(0, positiveInteger % 2);
@@ -85,13 +85,14 @@ public class ScrabbleInt extends AbstractNumber implements IInteger {
      * @param binaryString string with '0' or '1's
      * @return The complement of two represented by a string
      */
-    private String twoComplement(String binaryString){
+    private static String twoComplement(String binaryString){
         StringBuilder comp = new StringBuilder(binaryString);
-        for(int i = 0; i<binaryString.length(); i++){
-            comp.setCharAt(i, (char) ('0'+'1'-(int) comp.charAt(i)));
+        int length = binaryString.length();
+        for(int i = 0; i<length; i++){
+            comp.setCharAt(i, complement(comp.charAt(i)));
         }
 
-        for(int i = binaryString.length()-1; i>=0; i--){
+        for(int i = length-1; i>=0; i--){
             if(comp.charAt(i)=='0'){
                 comp.setCharAt(i, '1');
                 break;
@@ -99,6 +100,15 @@ public class ScrabbleInt extends AbstractNumber implements IInteger {
             comp.setCharAt(i,'0');
         }
         return comp.toString();
+    }
+
+    /**
+     * Transforms a '0' or '1' char into its complement
+     * @param character a char object
+     * @return complement
+     */
+    private static char complement(char character){
+        return character == '1' ? '0' : '1';
     }
 
     /**
