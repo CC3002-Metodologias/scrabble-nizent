@@ -32,7 +32,7 @@ public class ScrabbleBinary extends AbstractNumber implements IInteger {
      */
     @Override
     public ScrabbleBinary transformToScrabbleBinary() {
-        return this;
+        return new ScrabbleBinary(this.value);
     }
 
     /**

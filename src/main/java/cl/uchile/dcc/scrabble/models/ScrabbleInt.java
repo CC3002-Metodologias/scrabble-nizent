@@ -48,7 +48,7 @@ public class ScrabbleInt extends AbstractNumber implements IInteger {
      */
     @Override
     public ScrabbleInt transformToScrabbleInt() {
-        return this;
+        return new ScrabbleInt(this.value);
     }
 
     /**

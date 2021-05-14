@@ -45,7 +45,7 @@ public class ScrabbleBool extends AbstractScrabbleType {
      * @return the same object
      */
     public ScrabbleBool transformToScrabbleBool(){
-        return this;
+        return new ScrabbleBool(this.value);
     }
 
     /**
@@ -72,4 +72,5 @@ public class ScrabbleBool extends AbstractScrabbleType {
     public ScrabbleString transformToScrabbleString() {
         return new ScrabbleString(this.toString());
     }
+
 }

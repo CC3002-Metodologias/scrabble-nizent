@@ -54,7 +54,7 @@ public class ScrabbleString extends AbstractScrabbleType {
      */
     @Override
     public ScrabbleString transformToScrabbleString() {
-        return this;
+        return new ScrabbleString(this.value);
     }
 
     /**

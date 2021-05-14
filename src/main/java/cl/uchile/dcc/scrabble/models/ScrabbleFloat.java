@@ -30,7 +30,7 @@ public class ScrabbleFloat extends AbstractNumber {
      * {@inheritDoc}
      */
     public ScrabbleFloat transformToScrabbleFloat(){
-        return this;
+        return new ScrabbleFloat(this.value);
     }
 
     /**
