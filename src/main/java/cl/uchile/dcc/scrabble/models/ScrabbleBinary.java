@@ -196,33 +196,32 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
         return new ScrabbleBinary(binaryStringAnd(this.value, scrabbleBinary.Value()));
     }
 
-    private static String binaryStringAnd(String myVal, String extVal){
-        int myLength = myVal.length();
-        int extLength = extVal.length();
-        String shortest = myLength < extLength? myVal : extVal ;
-        String largest = myLength >= extLength? myVal : extVal ;
-        int minLength = shortest.length();
-        int maxLength = largest.length();
+    private static String binaryStringAnd(String bin1, String bin2){
+        String shortest = bin1.length() < bin2.length()? bin1 : bin2 ;
+        String largest = bin1.length() >= bin2.length()? bin1 : bin2 ;
         StringBuilder result = new StringBuilder();
 
-        for (int i = minLength-1; i >= 0; i--) {
-            result.insert(0,charAnd(myVal.charAt(i+myLength-minLength), extVal.charAt(i+extLength-minLength)));
+        for (int i = largest.length()-1; i >= 0; i--) {
+            if(i>largest.length()-shortest.length()-1){
+                result.insert(0, charAnd(shortest.charAt(i-largest.length()+shortest.length()), largest.charAt(i)));
+            } else {
+                result.insert(0,charAnd(shortest.charAt(0),largest.charAt(i)));
+            }
         }
-
-        for (int i = maxLength-minLength-1; i >= 0 ; i--) {
-            result.insert(0,charAnd(largest.charAt(i), shortest.charAt(0)));
-        }
-
         return result.toString();
     }
 
     private static char charAnd(char bit1, char bit2){
-        return bit1 == bit2? '1' : '0';
+        return (bit1 == '1') & (bit2 == '1')? '1' : '0';
     }
 
     @Override
     public ILogic andBool(ScrabbleBool scrabbleBool) {
-        return null;
+        return new ScrabbleBinary(binaryStringAnd(this.value, boolToBinaryString(scrabbleBool.Value())));
+    }
+
+    private String boolToBinaryString(boolean bool){
+        return bool? "1":"0";
     }
 
     @Override
@@ -235,23 +234,18 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
         return new ScrabbleBinary(binaryStringOr(scrabbleBinary.Value(),this.value));
     }
 
-    private static String binaryStringOr(String myVal, String extVal){
-        int myLength = myVal.length();
-        int extLength = extVal.length();
-        String shortest = myLength < extLength? myVal : extVal ;
-        String largest = myLength >= extLength? myVal : extVal ;
-        int minLength = shortest.length();
-        int maxLength = largest.length();
+    private static String binaryStringOr(String bin1, String bin2){
+        String shortest = bin1.length() < bin2.length()? bin1 : bin2 ;
+        String largest = bin1.length() >= bin2.length()? bin1 : bin2 ;
         StringBuilder result = new StringBuilder();
 
-        for (int i = minLength-1; i >= 0; i--) {
-            result.insert(0,charOr(myVal.charAt(i+myLength-minLength), extVal.charAt(i+extLength-minLength)));
+        for (int i = largest.length()-1; i >= 0; i--) {
+            if(i>largest.length()-shortest.length()-1){
+                result.insert(0, charOr(shortest.charAt(i-largest.length()+shortest.length()), largest.charAt(i)));
+            } else {
+                result.insert(0,charOr(shortest.charAt(0),largest.charAt(i)));
+            }
         }
-
-        for (int i = maxLength-minLength-1; i >= 0 ; i--) {
-            result.insert(0,charOr(largest.charAt(i), shortest.charAt(0)));
-        }
-
         return result.toString();
     }
 
@@ -261,7 +255,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
 
     @Override
     public ILogic orBool(ScrabbleBool scrabbleBool) {
-        return null;
+        return new ScrabbleBinary(binaryStringOr(this.value, boolToBinaryString(scrabbleBool.Value())));
     }
 
     @Override
