@@ -1,7 +1,7 @@
 package cl.uchile.dcc.scrabble.models;
 
 /**
- * this interface represents real numbers, encoded or not, that can be operated with each other
+ * this interface represents real numbers, encoded or not, that can be operated each other
  * @author Nicolás Zenteno Guardia
  */
 public interface INumber extends IType{

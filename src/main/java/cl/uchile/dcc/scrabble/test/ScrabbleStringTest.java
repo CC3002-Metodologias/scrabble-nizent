@@ -12,6 +12,7 @@ class ScrabbleStringTest extends AbstractScrabbleTypeTest{
     double doubleParam;
     String stringParam;
     String otherStringParam;
+    ScrabbleString result;
 
     @BeforeEach
     public void setUp(){
@@ -44,5 +45,11 @@ class ScrabbleStringTest extends AbstractScrabbleTypeTest{
     @Test
     void transformToScrabbleStringTest(){
         assertEquals(new ScrabbleString(stringTest.toString()),stringTest.transformToScrabbleString());
+    }
+
+    @Test
+    void sumTest(){
+        result = stringTest.sum(floatTest);
+        assertEquals(new ScrabbleString(stringParam+String.valueOf(doubleParam)), result);
     }
 }

@@ -2,6 +2,7 @@ package cl.uchile.dcc.scrabble.models;
 
 /**
  * This class represents a binary number and its behavior
+ * Negative numbers start with a '1' char, and positive numbers start with '0'
  * @author Nicolás Zenteno Guardia
  */
 public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, ILogic {
@@ -191,6 +192,12 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
         return this.value;
     }
 
+    /**
+     * Makes a logical and operation with a ScrabbleBinary.
+     * Bits of the binary strings are operated one by one from right to left with & operator
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return an ILogic with the result of the and operation
+     */
     @Override
     public ILogic andBinary(ScrabbleBinary scrabbleBinary) {
         return new ScrabbleBinary(binaryStringAnd(this.value, scrabbleBinary.Value()));
@@ -215,25 +222,57 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
         return (bit1 == '1') & (bit2 == '1')? '1' : '0';
     }
 
+    /**
+     * Makes a logical and operation with a ScrabbleBool
+     * Bits of the binary string are operated with the ScrabbleBool boolean one by one
+     * @param scrabbleBool the ScrabbleBool object
+     * @return an ILogic with the result of the and operation
+     */
     @Override
     public ILogic andBool(ScrabbleBool scrabbleBool) {
         return new ScrabbleBinary(binaryStringAnd(this.value, boolToBinaryString(scrabbleBool.Value())));
     }
 
+    /**
+     * Transforms a boolean into a binary String.
+     * Returns "1" if true and "0" if false
+     * @param bool the boolean
+     * @return a binary String
+     */
     private String boolToBinaryString(boolean bool){
         return bool? "1":"0";
     }
 
+    /**
+     * Makes a logical and operation with an ILogic
+     * @param iLogic the ILogic object
+     * @return an ILogic with the result
+     */
     @Override
     public ILogic and(ILogic iLogic) {
         return iLogic.andBinary(this);
     }
 
+    /**
+     * Makes a logical or operation with a ScrabbleBinary
+     * Bits of the binary strings are operated with the ScrabbleBool boolean one by one
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return an ILogic with the result of the or operation
+     */
     @Override
     public ILogic orBinary(ScrabbleBinary scrabbleBinary) {
         return new ScrabbleBinary(binaryStringOr(scrabbleBinary.Value(),this.value));
     }
 
+    /**
+     * Makes a logical or operation between two binary strings
+     * The binary strings bits are compared one by one from right to left.
+     * It is assumed that to the binary string left are only '0's or only '1's
+     * equivalent to the first bit, to conserve the sign
+     * @param bin1 a binary String with '0's and '1's
+     * @param bin2 a binary String with '0's and '1's
+     * @return the result of or operation
+     */
     private static String binaryStringOr(String bin1, String bin2){
         String shortest = bin1.length() < bin2.length()? bin1 : bin2 ;
         String largest = bin1.length() >= bin2.length()? bin1 : bin2 ;
@@ -249,15 +288,34 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
         return result.toString();
     }
 
+    /**
+     * Makes a logical or between two char.
+     * '1' represents true value, and '0' false.
+     * Returns the '1' char if at least one char is '1'
+     * @param bit1 a char representing a bit
+     * @param bit2 a char representing a bit
+     * @return the equivalent char of applying a logical or between bit1 and bit2
+     */
     private static char charOr(char bit1, char bit2){
         return bit1=='1' | bit2=='1' ? '1' : '0';
     }
 
+    /**
+     * Makes a logical or operation with a ScrabbleBool
+     * Bits of the binary strings are operated one by one
+     * @param scrabbleBool the ScrabbleBool object
+     * @return an ILogic with the result of the or operation
+     */
     @Override
     public ILogic orBool(ScrabbleBool scrabbleBool) {
         return new ScrabbleBinary(binaryStringOr(this.value, boolToBinaryString(scrabbleBool.Value())));
     }
 
+    /**
+     * Makes a logical or operation with an ILogic
+     * @param iLogic the ILogic object
+     * @return an ILogic with the result
+     */
     @Override
     public ILogic or(ILogic iLogic) {
         return iLogic.orBinary(this);

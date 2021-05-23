@@ -71,4 +71,13 @@ public class ScrabbleString extends AbstractScrabbleType {
     public String toString(){
         return this.value;
     }
+
+    /**
+     * Adds the value of a type to the string value of the caller
+     * @param iType object to add
+     * @return a new Scrabble String containing the concatenated string
+     */
+    public ScrabbleString sum(IType iType){
+        return new ScrabbleString(this.value + iType.toString());
+    }
 }

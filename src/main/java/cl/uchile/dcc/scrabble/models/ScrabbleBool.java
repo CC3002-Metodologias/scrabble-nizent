@@ -33,7 +33,7 @@ public class ScrabbleBool extends AbstractScrabbleType implements ILogic{
     public boolean equals(Object object){
         if(object instanceof ScrabbleBool){
             var boolObject = (ScrabbleBool) object;
-            return boolObject.Value()==this.Value();
+            return boolObject.Value()==this.value;
         }
         return false;
     }
