@@ -50,8 +50,7 @@ public class ScrabbleBool extends AbstractScrabbleType implements ILogic{
      * Returns the value of the Scrabble Bool
      * @return value
      */
-    @Override
-    public Boolean Value() {
+    public boolean Value() {
         return this.value;
     }
 
@@ -64,7 +63,8 @@ public class ScrabbleBool extends AbstractScrabbleType implements ILogic{
     }
 
     /**
-     * @inheritDoc
+     * Transforms the object into a ScrabbleString object
+     * @return a new ScrabbleString object containing a String equivalent to the object value
      */
     @Override
     public ScrabbleString transformToScrabbleString() {
@@ -80,31 +80,61 @@ public class ScrabbleBool extends AbstractScrabbleType implements ILogic{
         return Boolean.valueOf(this.value).toString();
     }
 
+    /**
+     * Makes a logical and operation with a ScrabbleBinary object
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return a new ScrabbleBinary containing the result
+     */
     @Override
     public ILogic andBinary(ScrabbleBinary scrabbleBinary) {
         return scrabbleBinary.andBool(this);
     }
 
+    /**
+     * Makes a logical and operation with an ScrabbleBool object
+     * @param scrabbleBool the ScrabbleBool object
+     * @return a new ScrabbleBool containing the operation result
+     */
     @Override
     public ILogic andBool(ScrabbleBool scrabbleBool) {
         return new ScrabbleBool(scrabbleBool.Value() & this.value);
     }
 
+    /**
+     * Makes a logical and operation with an ILogic object
+     * @param iLogic the ILogic object
+     * @return a new ILogic object containing the result
+     */
     @Override
     public ILogic and(ILogic iLogic) {
         return iLogic.andBool(this);
     }
 
+    /**
+     * Makes a logical or operation with a ScrabbleBinary object
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return an ILogic object containing the result value
+     */
     @Override
     public ILogic orBinary(ScrabbleBinary scrabbleBinary) {
         return scrabbleBinary.orBool(this);
     }
 
+    /**
+     * Makes a logical or operation with a ScrabbleBool object
+     * @param scrabbleBool the ScrabbleBool object
+     * @return a new ScrabbleBool with the result of the operation
+     */
     @Override
     public ILogic orBool(ScrabbleBool scrabbleBool) {
         return new ScrabbleBool(this.value | scrabbleBool.Value());
     }
 
+    /**
+     * Makes a logical or operation with an ILogic object
+     * @param iLogic the ILogic object
+     * @return a new ILogic object with the result
+     */
     @Override
     public ILogic or(ILogic iLogic) {
         return iLogic.orBool(this);

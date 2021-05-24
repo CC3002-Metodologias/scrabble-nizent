@@ -27,7 +27,8 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
     }
 
     /**
-     * {@inheritDoc}
+     * Transform the ScrabbleInt into a ScrabbleFloat
+     * @return a new ScrabbleFloat containing the ScrabbleInt value
      */
     @Override
     public ScrabbleFloat transformToScrabbleFloat(){
@@ -45,7 +46,8 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
     }
 
     /**
-     * {@inheritDoc}
+     * Transforms the ScrabbleInt into a ScrabbleBinary
+     * @return a new ScrabbleBinary containing the equivalent binary String
      */
     @Override
     public ScrabbleBinary transformToScrabbleBinary() {
@@ -54,7 +56,8 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
     }
 
     /**
-     * {@inheritDoc}
+     * Transforms the ScrabbleInt into a ScrabbleInt
+     * @return a new equivalent ScrabbleInt
      */
     @Override
     public ScrabbleInt transformToScrabbleInt() {
@@ -62,7 +65,7 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
     }
 
     /**
-     * Transform an integer to its equivalent binary string format
+     * Transform an int to its equivalent binary string format
      * @param integer value
      * @return binary string
      */
@@ -76,7 +79,7 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
     }
 
     /**
-     * Transforms a positive integer into a binary string
+     * Transforms a positive int into a binary string
      * @param positiveInteger positive integer
      * @return binary string starting with 0
      */
@@ -125,8 +128,7 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
      * Returns the value of the Scrabble Int
      * @return value
      */
-    @Override
-    public Integer Value() {
+    public int Value() {
         return this.value;
     }
 
@@ -139,7 +141,8 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
     }
 
     /**
-     * @inheritDoc
+     * Transforms the ScrabbleInt into a ScrabbleString
+     * @return a new ScrabbleString containing the ScrabbleInt value as a String
      */
     @Override
     public ScrabbleString transformToScrabbleString() {
@@ -155,96 +158,214 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
         return Integer.valueOf(this.value).toString();
     }
 
+    /**
+     * Sums a ScrabbleBinary
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return
+     *      a new ScrabbleBinary containing the sum between the int
+     *      value and the ScrabbleBinary binary String int value
+     */
     @Override
     public IInteger sumBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(this.value+scrabbleBinary.toInt())).transformToScrabbleBinary();
     }
 
+    /**
+     * Subtracts to a ScrabbleBinary
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return
+     *      a new ScrabbleBinary containing the binary representation of
+     *      ScrabbleBinary int equivalent value minus the ScrabbleInt value
+     */
     @Override
     public IInteger subtractToBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(scrabbleBinary.toInt()-this.value)).transformToScrabbleBinary();
     }
 
+    /**
+     * Subtracts to a ScrabbleInt
+     * @param scrabbleInt the ScrabbleInt object
+     * @return
+     *      a new ScrabbleInt containing the result of
+     *      Input ScrabbleInt value minus the ScrabbleInt value
+     */
     @Override
     public INumber subtractToInt(ScrabbleInt scrabbleInt) {
         return new ScrabbleInt(scrabbleInt.Value()-this.value);
     }
 
+    /**
+     * Divides a ScrabbleInt
+     * @param scrabbleInt the ScrabbleInt object
+     * @return
+     *      a new ScrabbleInt containing the int result of
+     *      Input ScrabbleInt value divided by the ScrabbleInt value
+     */
     @Override
     public INumber divideToInt(ScrabbleInt scrabbleInt) {
         return new ScrabbleInt(scrabbleInt.Value()/this.value);
     }
 
+    /**
+     * Multiplies a ScrabbleInt
+     * @param scrabbleInt the ScrabbleInt object
+     * @return
+     *      a new ScrabbleInt containing the result of the multiplication of its values
+     */
     @Override
     public INumber multiplyInt(ScrabbleInt scrabbleInt) {
         return (new ScrabbleInt(scrabbleInt.Value()*this.value));
     }
 
+    /**
+     * Divides a ScrabbleBinary
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return
+     *      a new ScrabbleBinary containing the binary representation of the result of
+     *      ScrabbleBinary input int value divided by the ScrabbleInt value
+     */
     @Override
     public IInteger divideToBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(scrabbleBinary.toInt()/this.value)).transformToScrabbleBinary();
     }
 
+    /**
+     * Multiplies a ScrabbleBinary
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return
+     *      a new ScrabbleBinary with the binary representation of
+     *      the multiplication of its values
+     */
     @Override
     public IInteger multiplyBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(scrabbleBinary.toInt()*this.value)).transformToScrabbleBinary();
     }
 
+    /**
+     * Sums a ScrabbleFloat
+     * @param scrabbleFloat the Scrabble Float object
+     * @return a new ScrabbleFloat containing the sum of values
+     */
     @Override
     public IStandard sumFloat(ScrabbleFloat scrabbleFloat) {
         return new ScrabbleFloat(this.value+scrabbleFloat.Value());
     }
 
+    /**
+     * Sums an IStandard number
+     * @param iStandardNumber the IStandard object
+     * @return a new IStandard object containing the result
+     */
     @Override
-    public INumber sum(IStandard iNumber) {
-        return iNumber.sumInt(this);
+    public INumber sum(IStandard iStandardNumber) {
+        return iStandardNumber.sumInt(this);
     }
 
+    /**
+     * Subtracts to a ScrabbleFloat
+     * @param scrabbleFloat the ScrabbleFloat object
+     * @return a new ScrabbleFloat containing the subtraction
+     */
     @Override
     public INumber subtractToFloat(ScrabbleFloat scrabbleFloat) {
         return new ScrabbleFloat(scrabbleFloat.Value()-this.value);
     }
 
+    /**
+     * Subtracts an IStandard number
+     * @param iStandard the IStandard object
+     * @return
+     *      a new IStandard containing the subtraction
+     *      result of the ScrabbleInt value minus input value
+     */
     @Override
-    public INumber subtract(IStandard iNumber) {
-        return iNumber.subtractToInt(this);
+    public INumber subtract(IStandard iStandard) {
+        return iStandard.subtractToInt(this);
     }
 
+    /**
+     * Divide a ScrabbleFloat
+     * @param scrabbleFloat the ScrabbleFloat object
+     * @return
+     *      a new ScrabbleFloat containing the result
+     *      of the division of values
+     */
     @Override
     public INumber divideFloat(ScrabbleFloat scrabbleFloat) {
         return new ScrabbleFloat(scrabbleFloat.Value()/this.value);
     }
 
+    /**
+     * Divides the ScrabbleInt by an IStandard number
+     * @param iStandard the IStandard object
+     * @return a new INumber containing the division result
+     */
     @Override
     public INumber divideBy(IStandard iStandard) {
         return iStandard.divideToInt(this);
     }
 
+    /**
+     * Sums an IEncodedInteger number
+     * @param iEncodedInteger the IEncodedInteger object
+     * @return a new INumber containing the result of the sum of its values
+     */
     @Override
     public INumber sum(IEncodedInteger iEncodedInteger) {
         return iEncodedInteger.sumInt(this);
     }
 
+    /**
+     * Subtracts a IEncodedInteger number
+     * @param iEncodedInteger the IEncodedInteger object
+     * @return
+     *      a new INumber containing the result
+     *      of ScrabbleInt value minus the input value
+     */
     @Override
     public INumber subtract(IEncodedInteger iEncodedInteger) {
         return iEncodedInteger.subtractToInt(this);
     }
 
+    /**
+     * Divides the ScrabbleInt by an IEncodedInteger
+     * @param iEncodedInteger the IEncodedInteger
+     * @return
+     *      a new INumber containing the result
+     *      of ScrabbleInt value divided by the input value
+     */
     @Override
     public INumber divideBy(IEncodedInteger iEncodedInteger) {
         return iEncodedInteger.divideToInt(this);
     }
 
+    /**
+     * Multiplies a ScrabbleFloat
+     * @param scrabbleFloat the ScrabbleFloat object
+     * @return
+     *      a new ScrabbleFloat containing the result of multiplication
+     *      between values
+     */
     @Override
     public INumber multiplyFloat(ScrabbleFloat scrabbleFloat) {
         return new ScrabbleFloat(scrabbleFloat.Value()*this.value);
     }
 
+    /**
+     * Multiplies an IStandard number
+     * @param iStandard the IStandard object
+     * @return a new INumber containing the multiplication result
+     */
     @Override
     public INumber multiplyBy(IStandard iStandard) {
         return iStandard.multiplyInt(this);
     }
 
+    /**
+     * Multiplies an IEncodedInteger number
+     * @param iEncodedInteger the IEncodedInteger object
+     * @return a new INumber containing the result of values multiplication
+     */
     @Override
     public INumber multiplyBy(IEncodedInteger iEncodedInteger) {
         return iEncodedInteger.multiplyInt(this);

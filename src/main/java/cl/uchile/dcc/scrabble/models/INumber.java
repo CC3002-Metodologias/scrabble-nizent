@@ -14,14 +14,29 @@ public interface INumber extends IType{
     /**
      * Sum a Scrabble Int object
      * @param scrabbleInt the Scrabble Int object
-     * @return the INumber result by summing both objects
+     * @return the INumber result by summing both object values
      */
     INumber sumInt(ScrabbleInt scrabbleInt);
 
+    /**
+     * Subtracts to a ScrabbleInt
+     * @param scrabbleInt the ScrabbleInt object
+     * @return an INumber containing the subtraction result
+     */
     INumber subtractToInt(ScrabbleInt scrabbleInt);
 
+    /**
+     * Divides a ScrabbleInt
+     * @param scrabbleInt the ScrabbleInt object
+     * @return an INumber containing the division result
+     */
     INumber divideToInt(ScrabbleInt scrabbleInt);
 
+    /**
+     * Multiplies a ScrabbleInt
+     * @param scrabbleInt the ScrabbleInt object
+     * @return an INumber containing the multiplication result
+     */
     INumber multiplyInt(ScrabbleInt scrabbleInt);
 
 }

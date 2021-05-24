@@ -22,7 +22,25 @@ public interface IInteger extends INumber {
      * @return the INumber result by summing both objects
      */
     IInteger sumBinary(ScrabbleBinary scrabbleBinary);
+
+    /**
+     * Subtracts to a ScrabbleBinary
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return a new IInteger containing the result
+     */
     IInteger subtractToBinary(ScrabbleBinary scrabbleBinary);
+
+    /**
+     * Divides a ScrabbleBinary
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return a new IInteger containing the result
+     */
     IInteger divideToBinary(ScrabbleBinary scrabbleBinary);
+
+    /**
+     * Multiplies a ScrabbleBinary
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return a new IInteger containing the result
+     */
     IInteger multiplyBinary(ScrabbleBinary scrabbleBinary);
 }

@@ -42,7 +42,6 @@ public class ScrabbleString extends AbstractScrabbleType {
      * Returns the value of the Scrabble String
      * @return value
      */
-    @Override
     public String Value(){
         return this.value;
     }

@@ -10,14 +10,14 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
 
     /**
      * Creates a new Binary number
-     * @param value a String in 01 format
+     * @param value a String in 01110010101010100 format
      */
     public ScrabbleBinary(String value){
         this.value = value;
     }
 
     /**
-     * Returns the hash code of the class
+     * Returns the hash code of the object
      * @return class hash code
      */
     @Override
@@ -26,7 +26,8 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
     }
 
     /**
-     * {@inheritDoc}
+     * Transforms the ScrabbleBinary into a ScrabbleBinary
+     * @return a new equivalent ScrabbleBinary
      */
     @Override
     public ScrabbleBinary transformToScrabbleBinary() {
@@ -34,7 +35,8 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
     }
 
     /**
-     * {@inheritDoc}
+     * Transforms the ScrabbleBinary into a ScrabbleInt
+     * @return a new ScrabbleInt with an int equivalent to the binary String
      */
     @Override
     public ScrabbleInt transformToScrabbleInt() {
@@ -42,68 +44,150 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
     }
 
     /**
-     * {@inheritDoc}
+     * Transforms the ScrabbleBinary into a ScrabbleFloat
+     * @return a new ScrabbleFloat containing a double equivalent to the binary String
      */
     @Override
     public ScrabbleFloat transformToScrabbleFloat() {
         return new ScrabbleFloat(this.toInt());
     }
 
+    /**
+     * Sums an IInteger
+     * @param iInteger the IInteger object
+     * @return an IInteger containing the sum of the values
+     */
     @Override
     public IInteger sum(IInteger iInteger) {
         return iInteger.sumBinary(this);
     }
 
+    /**
+     * Subtracts an IInteger number
+     * @param iInteger the IInteger object
+     * @return
+     *      an IInteger containing the result of
+     *      ScrabbleBinary int equivalent value minus IInteger value
+     */
     @Override
     public IInteger subtract(IInteger iInteger) {
         return iInteger.subtractToBinary(this);
     }
 
+    /**
+     * Divides the ScrabbleBinary by an IInteger number
+     * @param iInteger the IInteger number
+     * @return
+     *      an IInteger containing the result of
+     *      the ScrabbleBinary int equivalent value divided by IInteger value
+     */
     @Override
     public IInteger divideBy(IInteger iInteger) {
         return iInteger.divideToBinary(this);
     }
 
+    /**
+     * Multiplies the ScrabbleBinary by an IInteger number
+     * @param iInteger the IInteger number
+     * @return
+     *      an IInteger containing the result of
+     *      the ScrabbleBinary int equivalent value multiplied by IInteger value
+     */
     @Override
     public IInteger multiplyBy(IInteger iInteger) {
         return iInteger.multiplyBinary(this);
     }
 
+    /**
+     * Sums a ScrabbleInt
+     * @param scrabbleInt the ScrabbleInt object
+     * @return
+     *      a new ScrabbleInt containing the sum of the values
+     */
     @Override
     public INumber sumInt(ScrabbleInt scrabbleInt) {
         return new ScrabbleInt(this.toInt()+scrabbleInt.Value());
     }
 
+    /**
+     * Sums a ScrabbleBinary
+     * @param scrabbleBinary the Scrabble Binary object
+     * @return
+     *      a new ScrabbleBinary containing a binary representation of
+     *      the sum of the values
+     */
     @Override
     public IInteger sumBinary(ScrabbleBinary scrabbleBinary) {
         return new ScrabbleInt(scrabbleBinary.toInt()+this.toInt()).transformToScrabbleBinary();
     }
 
+    /**
+     * Subtracts to a ScrabbleBinary
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return
+     *      a new ScrabbleBinary containing a binary representation of
+     *      the result of the input ScrabbleBinary int value minus the ScrabbleBinary int value
+     */
     @Override
     public IInteger subtractToBinary(ScrabbleBinary scrabbleBinary) {
         return new ScrabbleInt(scrabbleBinary.toInt()-this.toInt()).transformToScrabbleBinary();
     }
 
+    /**
+     * Subtracts to a ScrabbleInt
+     * @param scrabbleInt the ScrabbleInt object
+     * @return
+     *      a new ScrabbleInt containing
+     *      the result of the ScrabbleInt value minus the ScrabbleBinary int value
+     */
     @Override
     public INumber subtractToInt(ScrabbleInt scrabbleInt) {
         return new ScrabbleInt(scrabbleInt.Value()-this.toInt());
     }
 
+    /**
+     * Divide a ScrabbleInt
+     * @param scrabbleInt the ScrabbleInt object
+     * @return
+     *      a new ScrabbleInt containing
+     *      the result of the ScrabbleInt value divided by the ScrabbleBinary int value
+     */
     @Override
     public INumber divideToInt(ScrabbleInt scrabbleInt) {
         return new ScrabbleInt( scrabbleInt.Value()/this.toInt());
     }
 
+    /**
+     * Multiplies a ScrabbleInt
+     * @param scrabbleInt the ScrabbleInt object
+     * @return
+     *      a new ScrabbleInt containing
+     *      the result of the ScrabbleInt value multiplied by the ScrabbleBinary int value
+     */
     @Override
     public INumber multiplyInt(ScrabbleInt scrabbleInt) {
         return new ScrabbleFloat(this.toInt()*scrabbleInt.Value());
     }
 
+    /**
+     * Divides a ScrabbleBinary
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return
+     *      a new ScrabbleBinary containing a binary representation of
+     *      the result of the input ScrabbleBinary int value divided by the ScrabbleBinary int value
+     */
     @Override
     public IInteger divideToBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(scrabbleBinary.toInt()/this.toInt())).transformToScrabbleBinary();
     }
 
+    /**
+     * Multiplies a ScrabbleBinary
+     * @param scrabbleBinary the ScrabbleBinary object
+     * @return
+     *      a new ScrabbleBinary containing the binary representation of
+     *      the multiplication between int equivalent values of the binary String's
+     */
     @Override
     public IInteger multiplyBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(scrabbleBinary.toInt()*this.toInt())).transformToScrabbleBinary();
@@ -162,7 +246,6 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      * Returns the value of the Scrabble Binary
      * @return value
      */
-    @Override
     public String Value() {
         return this.value;
     }
@@ -176,7 +259,8 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
     }
 
     /**
-     * @inheritDoc
+     * Transforms the ScrabbleBinary into a ScrabbleString
+     * @return a ScrabbleString containing the binary String
      */
     @Override
     public ScrabbleString transformToScrabbleString() {
@@ -203,6 +287,13 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
         return new ScrabbleBinary(binaryStringAnd(this.value, scrabbleBinary.Value()));
     }
 
+    /**
+     * Makes a logical and operation between two binary Strings
+     * Each bit are operated one by one starting from the right
+     * @param bin1 a binary String
+     * @param bin2 a binary String
+     * @return a binary String containing the result of and operation
+     */
     private static String binaryStringAnd(String bin1, String bin2){
         String shortest = bin1.length() < bin2.length()? bin1 : bin2 ;
         String largest = bin1.length() >= bin2.length()? bin1 : bin2 ;
@@ -218,6 +309,13 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
         return result.toString();
     }
 
+    /**
+     * Makes a logical and operation between chars representing true or false with '1' or '0'
+     * respectively, called bits
+     * @param bit1 the first bit
+     * @param bit2 the second bit
+     * @return '1' if bit1 or bit2 is '1', '0' in other case
+     */
     private static char charAnd(char bit1, char bit2){
         return (bit1 == '1') & (bit2 == '1')? '1' : '0';
     }
