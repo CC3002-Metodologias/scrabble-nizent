@@ -13,6 +13,7 @@ class ILogicTest extends ITypeTest {
     ScrabbleBinary otherScrabbleBinary;
     ILogic result;
     String binaryString;
+    String negatedBinaryString;
     String otherBinaryString;
     String andBinaryString;
     String orBinaryString;
@@ -22,6 +23,7 @@ class ILogicTest extends ITypeTest {
     @BeforeEach
     void setUp(){
         binaryString = "0111";
+        negatedBinaryString = "1000";
         scrabbleBinary = new ScrabbleBinary(binaryString);
         otherBinaryString = "11010";
         otherScrabbleBinary = new ScrabbleBinary(otherBinaryString);
@@ -109,5 +111,11 @@ class ILogicTest extends ITypeTest {
         assertEquals(new ScrabbleBool(true), result);
         result = scrabbleBool.or(otherScrabbleBool);
         assertEquals(new ScrabbleBool(true), result);
+    }
+
+    @Test
+    void negateTest(){
+        assertEquals(negatedBinaryString, scrabbleBinary.negate().toString());
+        assertEquals(scrabbleBool, otherScrabbleBool.negate());
     }
 }

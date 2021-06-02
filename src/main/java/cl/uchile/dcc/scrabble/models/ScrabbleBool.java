@@ -139,4 +139,13 @@ public class ScrabbleBool extends AbstractScrabbleType implements ILogic{
     public ILogic or(ILogic iLogic) {
         return iLogic.orBool(this);
     }
+
+    /**
+     * Makes a negation operation to the object
+     * @return a new SrabbleBool with the result of the negation
+     */
+    @Override
+    public ILogic negate() {
+        return new ScrabbleBool(!this.value);
+    }
 }

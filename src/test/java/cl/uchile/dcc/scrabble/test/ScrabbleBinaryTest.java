@@ -15,6 +15,7 @@ class ScrabbleBinaryTest extends AbstractScrabbleTypeTest {
     private ScrabbleBinary positiveBin;
     private double doubleParam;
     private String binParam;
+    private String negatedBinParam;
     private String otherBinParam;
     private String negativeBinParam;
     private int negativeBinToInt;
@@ -35,6 +36,7 @@ class ScrabbleBinaryTest extends AbstractScrabbleTypeTest {
     public void setUp(){
         doubleParam = 67.9;
         binParam = "0111";
+        negatedBinParam = "1000";
         intBinParam = 7;
         negativeBinParam = "101";
         negativeBinToInt = -3;
@@ -362,5 +364,10 @@ class ScrabbleBinaryTest extends AbstractScrabbleTypeTest {
                 binaryTest.or(trueScrabbleBool));
         assertEquals(new ScrabbleBinary(binParam),
                 binaryTest.or(falseScrabbleBool));
+    }
+
+    @Test
+    void negateTest(){
+        assertEquals(negatedBinParam, binaryTest.negate().toString());
     }
 }

@@ -486,4 +486,31 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
         return result<0? Integer.toBinaryString(result):
                 "0"+Integer.toBinaryString(result);
     }
+
+    /**
+     * Makes a negation operation to the object
+     * Each bit is negated one by one
+     * @return a new ScrabbleBinary with the result of the negation
+     */
+    @Override
+    public ILogic negate() {
+        StringBuilder negated = new StringBuilder();
+        int len = this.value.length();
+        int j;
+        for (int i = 0; i < len; i++) {
+            j = len-i-1;
+            negated.insert(0, negateBit(this.value.charAt(j)));
+        }
+        return new ScrabbleBinary(negated.toString());
+    }
+
+    /**
+     * Makes a logical negation to a bit char
+     * @param bit a char representing a bit
+     * @return the equivalent char of applying a logical negation to bit
+     */
+    private static char negateBit(char bit){
+        return bit=='1'? '0' : '1';
+    }
+
 }

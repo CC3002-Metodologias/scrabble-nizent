@@ -6,6 +6,12 @@ package cl.uchile.dcc.scrabble.models;
  */
 public interface ILogic {
     /**
+     * Makes a negation operation to the object
+     * @return an ILogic with the result of the negation
+     */
+    ILogic negate();
+
+    /**
      * Makes a logical and operation with a ScrabbleBinary
      * @param scrabbleBinary the ScrabbleBinary object
      * @return an ILogic with the result of the and operation

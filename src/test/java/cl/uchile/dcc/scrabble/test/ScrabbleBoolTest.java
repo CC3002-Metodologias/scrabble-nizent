@@ -121,4 +121,10 @@ class ScrabbleBoolTest extends AbstractScrabbleTypeTest {
         assertEquals(new ScrabbleBool(false),
                 falseBool.or(falseBool));
     }
+
+    @Test
+    void negateTest(){
+        assertEquals(falseBool, trueBool.negate());
+        assertEquals(trueBool, falseBool.negate());
+    }
 }
