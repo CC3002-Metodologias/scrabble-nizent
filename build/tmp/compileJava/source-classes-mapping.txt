@@ -1,0 +1,30 @@
+cl/uchile/dcc/scrabble/models/ScrabbleString.java
+ cl.uchile.dcc.scrabble.models.ScrabbleString
+cl/uchile/dcc/scrabble/models/AbstractScrabbleType.java
+ cl.uchile.dcc.scrabble.models.AbstractScrabbleType
+cl/uchile/dcc/scrabble/gui/Scrabble.java
+ cl.uchile.dcc.scrabble.gui.Scrabble
+cl/uchile/dcc/scrabble/models/IType.java
+ cl.uchile.dcc.scrabble.models.IType
+module-info.java
+ module-info
+cl/uchile/dcc/scrabble/models/ScrabbleBool.java
+ cl.uchile.dcc.scrabble.models.ScrabbleBool
+cl/uchile/dcc/scrabble/models/ScrabbleFloat.java
+ cl.uchile.dcc.scrabble.models.ScrabbleFloat
+cl/uchile/dcc/scrabble/models/ScrabbleInt.java
+ cl.uchile.dcc.scrabble.models.ScrabbleInt
+cl/uchile/dcc/scrabble/models/ScrabbleBinary.java
+ cl.uchile.dcc.scrabble.models.ScrabbleBinary
+cl/uchile/dcc/scrabble/models/IStandard.java
+ cl.uchile.dcc.scrabble.models.IStandard
+cl/uchile/dcc/scrabble/models/ILogic.java
+ cl.uchile.dcc.scrabble.models.ILogic
+cl/uchile/dcc/scrabble/models/IInteger.java
+ cl.uchile.dcc.scrabble.models.IInteger
+cl/uchile/dcc/scrabble/models/AbstractNumber.java
+ cl.uchile.dcc.scrabble.models.AbstractNumber
+cl/uchile/dcc/scrabble/models/INumber.java
+ cl.uchile.dcc.scrabble.models.INumber
+cl/uchile/dcc/scrabble/models/IEncodedInteger.java
+ cl.uchile.dcc.scrabble.models.IEncodedInteger
