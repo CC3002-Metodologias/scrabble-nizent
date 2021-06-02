@@ -36,7 +36,7 @@ class ScrabbleBoolTest extends AbstractScrabbleTypeTest {
     }
 
     @Test
-    void ValueTest(){
+    void valueTest(){
         assertFalse(falseBool.Value());
     }
 

@@ -64,4 +64,9 @@ class ScrabbleStringTest extends AbstractScrabbleTypeTest {
         result = stringTest.sum(scrabbleBool);
         assertEquals(new ScrabbleString(stringParam+scrabbleBool.toString()), result);
     }
+
+    @Test
+    void valueTest(){
+        assertEquals(stringParam, stringTest.Value());
+    }
 }
