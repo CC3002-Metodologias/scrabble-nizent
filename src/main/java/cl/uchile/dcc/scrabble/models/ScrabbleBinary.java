@@ -473,4 +473,17 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
     public ILogic or(ILogic iLogic) {
         return iLogic.orBinary(this);
     }
+
+    /**
+     * It returns the sign of a int number
+     * @param result the String sign
+     * @return "0" if it is positive, "" else
+     */
+    public static String toBinary(int result){
+        /* As it is used Integer.toBinaryString method and it contains 32 bits
+        for negative numbers and ScrabbleBin supports at most 32 bits, sign
+        for negative result will be the empty String */
+        return result<0? Integer.toBinaryString(result):
+                "0"+Integer.toBinaryString(result);
+    }
 }

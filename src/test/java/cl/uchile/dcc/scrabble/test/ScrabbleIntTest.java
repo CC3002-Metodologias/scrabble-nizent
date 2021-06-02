@@ -1,18 +1,22 @@
 package cl.uchile.dcc.scrabble.test;
 
 import cl.uchile.dcc.scrabble.models.*;
-import cl.uchile.dcc.scrabble.test.AbstractScrabbleTypeTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ScrabbleIntTest extends AbstractScrabbleTypeTest {
-    ScrabbleFloat floatTest;
-    ScrabbleInt intTest;
-    double doubleParam;
-    String binParam, negativeBinParam, otherNegativeBinParam;
-    int intParam, intNegativeBinParam, intOtherNegativeBinParam;
+    private ScrabbleFloat floatTest;
+    private ScrabbleInt intTest;
+    private ScrabbleBinary binTest;
+    private double doubleParam;
+    private String binParam;
+    private String negativeBinParam;
+    private String otherNegativeBinParam;
+    private int intParam;
+    private int intNegativeBinParam;
+    private int intOtherNegativeBinParam;
 
     @BeforeEach
     public void setUp(){
@@ -23,8 +27,10 @@ class ScrabbleIntTest extends AbstractScrabbleTypeTest {
         otherNegativeBinParam = "1010";
         intOtherNegativeBinParam = intNegativeBinParam+1;
         binParam = "01011001";
+        binTest = new ScrabbleBinary(binParam);
         floatTest = new ScrabbleFloat(doubleParam);
         intTest = new ScrabbleInt(intParam);
+
     }
 
     @Test
@@ -32,9 +38,13 @@ class ScrabbleIntTest extends AbstractScrabbleTypeTest {
         checkConstructor(intTest, new ScrabbleInt(intParam),
                 new ScrabbleInt(intNegativeBinParam),
                 floatTest);
-        assertNotEquals((new ScrabbleInt(intNegativeBinParam)).hashCode(), intTest.hashCode());
+        assertNotEquals((new ScrabbleInt(intNegativeBinParam)).hashCode(),
+                intTest.hashCode());
+        assertEquals((new ScrabbleInt(intParam)).hashCode(),
+                intTest.hashCode());
         // numbers of different class are compared by its value
         assertEquals(intTest, new ScrabbleFloat(intParam));
+        assertEquals(intTest, new ScrabbleBinary(ScrabbleBinary.toBinary(intParam)));
     }
 
     @Test
@@ -44,13 +54,18 @@ class ScrabbleIntTest extends AbstractScrabbleTypeTest {
     }
 
     @Test
+    void valueTest(){
+        assertEquals(intParam, intTest.Value());
+    }
+
+    @Test
     void toStringTest(){
         assertEquals(Integer.toString(intParam), intTest.toString());
     }
 
     @Test
     void transformToScrabbleFloatTest(){
-        assertEquals(new ScrabbleFloat(Float.valueOf(intParam)), intTest.transformToScrabbleFloat());
+        assertEquals(new ScrabbleFloat(intParam), intTest.transformToScrabbleFloat());
     }
 
     @Test
@@ -80,5 +95,77 @@ class ScrabbleIntTest extends AbstractScrabbleTypeTest {
     @Test
     void transformToScrabbleStringTest(){
         assertEquals(new ScrabbleString(intTest.toString()),intTest.transformToScrabbleString());
+    }
+
+    @Test
+    void sumToFloatTest(){
+        assertEquals(new ScrabbleFloat(intParam+doubleParam),
+                intTest.sumToFloat(floatTest));
+    }
+
+    @Test
+    void sumToIntTest(){
+        assertEquals(new ScrabbleInt(intParam+intParam),
+                intTest.sumToInt(intTest));
+    }
+
+    @Test
+    void subtractToIntTest(){
+        assertEquals(new ScrabbleInt(0),
+                intTest.subtractToInt(intTest));
+    }
+
+    @Test
+    void subtractToFloatTest(){
+        assertEquals(new ScrabbleFloat(-intParam+doubleParam),
+                intTest.subtractToFloat(floatTest));
+    }
+
+    @Test
+    void divideToIntTest(){
+        assertEquals(new ScrabbleInt(1),
+                intTest.divideToInt(intTest));
+    }
+
+    @Test
+    void divideToFloatTest(){
+        assertEquals(new ScrabbleFloat(doubleParam/intParam),
+                intTest.divideToFloat(floatTest));
+    }
+
+    @Test
+    void multiplyToIntTest(){
+        assertEquals(new ScrabbleInt(intParam*intParam),
+                intTest.multiplyToInt(intTest));
+    }
+
+    @Test
+    void multiplyToFloatTest(){
+        assertEquals(new ScrabbleFloat(doubleParam*intParam),
+                intTest.multiplyToFloat(floatTest));
+    }
+
+    @Test
+    void sumToBinaryTest(){
+        assertEquals(new ScrabbleBinary(ScrabbleBinary.toBinary(binTest.toInt()+intParam)),
+                intTest.sumToBinary(binTest));
+    }
+
+    @Test
+    void subtractToBinaryTest(){
+        assertEquals(new ScrabbleBinary(ScrabbleBinary.toBinary(binTest.toInt()-intParam)),
+                intTest.subtractToBinary(binTest));
+    }
+
+    @Test
+    void divideToBinaryTest(){
+        assertEquals(new ScrabbleBinary(ScrabbleBinary.toBinary(binTest.toInt()/intParam)),
+                intTest.divideToBinary(binTest));
+    }
+
+    @Test
+    void multiplyToBinaryTest(){
+        assertEquals((new ScrabbleBinary(ScrabbleBinary.toBinary(binTest.toInt()*intParam))),
+                intTest.multiplyToBinary(binTest));
     }
 }

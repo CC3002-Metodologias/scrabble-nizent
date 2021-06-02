@@ -196,5 +196,4 @@ public class ScrabbleFloat extends AbstractNumber implements IStandard {
     public INumber multiplyBy(INumber iNumber) {
         return iNumber.multiplyToFloat(this);
     }
-
 }

@@ -5,8 +5,6 @@ import cl.uchile.dcc.scrabble.models.ScrabbleInt;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class IEncodedIntegerTest extends IIntegerTest {
 
     @Test

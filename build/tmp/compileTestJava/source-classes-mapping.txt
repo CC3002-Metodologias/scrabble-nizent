@@ -1,24 +1,24 @@
 cl/uchile/dcc/scrabble/test/IIntegerTest.java
  cl.uchile.dcc.scrabble.test.IIntegerTest
-cl/uchile/dcc/scrabble/test/ScrabbleIntTest.java
- cl.uchile.dcc.scrabble.test.ScrabbleIntTest
+cl/uchile/dcc/scrabble/test/ScrabbleFloatTest.java
+ cl.uchile.dcc.scrabble.test.ScrabbleFloatTest
 cl/uchile/dcc/scrabble/test/AbstractScrabbleTypeTest.java
  cl.uchile.dcc.scrabble.test.AbstractScrabbleTypeTest
 cl/uchile/dcc/scrabble/test/ITypeTest.java
  cl.uchile.dcc.scrabble.test.ITypeTest
-cl/uchile/dcc/scrabble/test/ScrabbleBoolTest.java
- cl.uchile.dcc.scrabble.test.ScrabbleBoolTest
 cl/uchile/dcc/scrabble/test/ScrabbleStringTest.java
  cl.uchile.dcc.scrabble.test.ScrabbleStringTest
+cl/uchile/dcc/scrabble/test/ScrabbleBinaryTest.java
+ cl.uchile.dcc.scrabble.test.ScrabbleBinaryTest
 cl/uchile/dcc/scrabble/test/IEncodedIntegerTest.java
  cl.uchile.dcc.scrabble.test.IEncodedIntegerTest
 cl/uchile/dcc/scrabble/test/ILogicTest.java
  cl.uchile.dcc.scrabble.test.ILogicTest
-cl/uchile/dcc/scrabble/test/ScrabbleBinaryTest.java
- cl.uchile.dcc.scrabble.test.ScrabbleBinaryTest
+cl/uchile/dcc/scrabble/test/ScrabbleBoolTest.java
+ cl.uchile.dcc.scrabble.test.ScrabbleBoolTest
 cl/uchile/dcc/scrabble/test/INumberTest.java
  cl.uchile.dcc.scrabble.test.INumberTest
 cl/uchile/dcc/scrabble/test/IStandardTest.java
  cl.uchile.dcc.scrabble.test.IStandardTest
-cl/uchile/dcc/scrabble/test/ScrabbleFloatTest.java
- cl.uchile.dcc.scrabble.test.ScrabbleFloatTest
+cl/uchile/dcc/scrabble/test/ScrabbleIntTest.java
+ cl.uchile.dcc.scrabble.test.ScrabbleIntTest

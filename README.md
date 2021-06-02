@@ -107,14 +107,81 @@ boolean b = true;
 ScrabbleBool sBool = new ScrabbleBool(b);
 ```
 
-And you can make another Type as follows with sum(IType iType) method
+You can make different logical operations with and(ILogic iLogic) or or(ILogic iLogic)
 
 ```java
 boolean val = s.Value(); // val is true
-IType iType = new ScrabbleFloat(12.5);
-ScrabbleString newSString = s.sum(iType) // newSString contains "Hola Mundo 12.5"
-iType = new ScrabbleBool(false);
-newSString = s.sum(iType) // newSString now contains "Hola Mundo false"
-s.setValue("Hola Nuevo Mundo"); // Now, s value is "Hola Nuevo Mundo"
+ScrabbleBool falseBool = sBool.and(new ScrabbleBool(false)); // falseBool contains false value
+ScrabbleBool trueBool = sBool.or(new ScrabbleBool(false)); // trueBool contains true value
 ```
+
+**3. Scrabble Binaries**
+
+Scrabble Binaries represents binary numbers. You can construct a new Scrabble Binary with 
+a String containing at most 32 bits represented by the characters '0' and '1'. Negative numbers 
+must start with '1' character an positive number starts with '0' character. It is supposed 
+that a number of the form "1..." is negative, and "0..." is positive. Binaries can behave as Logical
+objects.
+
+```java
+String bin = "0101011111";
+ScrabbleBinary sBin = new ScrabbleBinary(bin);
+```
+
+You can treat this object as a number that can only be operated with integer representable objects, 
+this is ScrabbleInt or ScrabbleBin. This means that you can't divide a ScrabbleBinary by a ScrabbleFloat.
+But you can do the following (operation sum, subtraction, division, multiplication results remain as binary)
+
+```java
+String  otherBin = "0111";
+ScrabbleBinary otherSBin = new ScrabbleBinary(otherBin);
+sBin.sum(otherSBin); //this returns a new ScrabbleBinary containing a binary representation of sBin+otherSBin
+sBin.divideBy(otherSBin); //this returns a new ScrabbleBinary containing a binary representation of sBin/otherSBin
+ScrabbleInt anInt = new ScrabbleInt(7);
+sBin.sum(anInt); // you can sum different IInteger objects
+otherBin.and(falseBool) // returns a new ScrabbleBinary containing "0000", bits are compared one by one
+```
+**4. Scrabble Integers**
+
+Scrabble Integers represents integer numbers. You can construct a new Scrabble Int with 
+an int value.
+
+```java
+int integer = 14;
+ScrabbleInt sInt = new ScrabbleInt(integer);
+```
+
+You can make operations as sum, subtraction, division and multiplication with any type of Scrabble Number (those who inherits from AbstractNumber Class). 
+Here you can see an example 
+
+```java
+sInt.sum(new ScrabbleInt(9)); //this returns a new ScrabbleInt containing 14+9
+sInt.multiplyBy(sInt); //this returns a new ScrabbleInt containing 14*14
+sInt.subtract(new ScrabbleInt(3)); // returns a new ScrabbleInt containing 14-3
+sInt.divideBy(new ScrabbleFloat(2.5)); // returns a new ScrabbleFloat containing 14/2.5
+```
+
+**5. Scrabble Floats**
+
+Scrabble Floats represents float numbers. You can construct a new Scrabble Float with 
+a double value.
+
+```java
+double value = 14.5;
+ScrabbleFloat sFloat = new ScrabbleFloat(value);
+```
+
+You can make operations as sum, subtraction, division and multiplication with any type of Scrabble Number (those who inherits from AbstractNumber Class). 
+Here you can see an example 
+
+```java
+sFloat.sum(new ScrabbleInt(9)); //this returns a new ScrabbleFloat containing 14.5+9
+sFloat.multiplyBy(sInt); //this returns a new ScrabbleFloat containing 14.5*14.5
+sFloat.subtract(new ScrabbleInt(3)); // returns a new ScrabbleFloat containing 14.5-3
+sFloat.divideBy(new ScrabbleFloat(2.5)); // returns a new ScrabbleFloat containing 14.5/2.5
+```
+
+There are more functionalities that you can check, every method is documented. The classes
+structure may change in the future.
+
 **The rest of the documentation is left for the users of this template to complete**
