@@ -39,7 +39,7 @@ The classes were created with the following structure (imagine it as a tree)
         ScrabbleBool,
         AbstractNumber{
             ScrabbleInt,
-            ScrabbleBin,
+            ScrabbleBinary,
             ScrabbleFloat
         }
     }
@@ -176,7 +176,7 @@ Here you can see an example
 
 ```java
 sFloat.sum(new ScrabbleInt(9)); //this returns a new ScrabbleFloat containing 14.5+9
-sFloat.multiplyBy(sInt); //this returns a new ScrabbleFloat containing 14.5*14.5
+sFloat.multiplyBy(sFloat); //this returns a new ScrabbleFloat containing 14.5*14.5
 sFloat.subtract(new ScrabbleInt(3)); // returns a new ScrabbleFloat containing 14.5-3
 sFloat.divideBy(new ScrabbleFloat(2.5)); // returns a new ScrabbleFloat containing 14.5/2.5
 ```
