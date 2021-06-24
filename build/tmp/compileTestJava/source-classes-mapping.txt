@@ -22,3 +22,21 @@ cl/uchile/dcc/scrabble/test/models/type/IStandardTest.java
  cl.uchile.dcc.scrabble.test.models.type.IStandardTest
 cl/uchile/dcc/scrabble/test/models/type/ILogicTest.java
  cl.uchile.dcc.scrabble.test.models.type.ILogicTest
+cl/uchile/dcc/scrabble/test/models/operation/arithmetic/SubTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.arithmetic.SubTest
+cl/uchile/dcc/scrabble/test/models/operation/arithmetic/AddTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.arithmetic.AddTest
+cl/uchile/dcc/scrabble/test/models/operation/arithmetic/DivTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.arithmetic.DivTest
+cl/uchile/dcc/scrabble/test/models/operation/arithmetic/MultTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.arithmetic.MultTest
+cl/uchile/dcc/scrabble/test/models/operation/arithmetic/AbstractOperationTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.arithmetic.AbstractOperationTest
+cl/uchile/dcc/scrabble/test/models/operation/logical/OrTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.logical.OrTest
+cl/uchile/dcc/scrabble/test/models/operation/logical/AndTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.logical.AndTest
+cl/uchile/dcc/scrabble/test/models/operation/logical/AbstractLogicalOperationTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.logical.AbstractLogicalOperationTest
+cl/uchile/dcc/scrabble/test/models/operation/logical/NotTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.logical.NotTest
