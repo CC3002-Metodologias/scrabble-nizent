@@ -15,8 +15,27 @@ public class BoolConstant extends AbstractConstant {
     }
 
     @Override
+    public boolean equals(Object obj){
+        if(obj instanceof BoolConstant){
+            BoolConstant boolConstant = (BoolConstant) obj;
+            return boolConstant.value().equals(this.value);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        return this.value.hashCode();
+    }
+
+    @Override
     public Constant andToBin(BinConstant binConstant) {
         return new BinConstant(this.value.andBinary(binConstant.value()));
+    }
+
+    @Override
+    public Constant addToString(StringConstant stringConstant) {
+        return new StringConstant(stringConstant.value().sum(this.value));
     }
 
     @Override
@@ -47,5 +66,10 @@ public class BoolConstant extends AbstractConstant {
     @Override
     public Constant negate(){
         return new BoolConstant(this.value.negate());
+    }
+
+    @Override
+    public Constant evaluate(){
+        return new BoolConstant(this.value);
     }
 }

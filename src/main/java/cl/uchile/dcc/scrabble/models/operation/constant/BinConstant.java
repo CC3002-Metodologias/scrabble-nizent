@@ -16,9 +16,28 @@ public class BinConstant extends AbstractConstant {
     }
 
     @Override
+    public boolean equals(Object obj){
+        if(obj instanceof BinConstant){
+            BinConstant binConstant = (BinConstant) obj;
+            return binConstant.value().equals(this.value);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        return this.value.hashCode();
+    }
+
+    @Override
     public Constant addToBin(BinConstant binConstant){
         return new BinConstant(binConstant.value().
                 sum(this.value).transformToScrabbleBinary());
+    }
+
+    @Override
+    public Constant addToString(StringConstant stringConstant){
+        return new StringConstant(stringConstant.value().sum(this.value));
     }
 
     @Override
@@ -134,5 +153,10 @@ public class BinConstant extends AbstractConstant {
     @Override
     public Constant negate(){
         return new BinConstant(this.value.negate());
+    }
+
+    @Override
+    public Constant evaluate(){
+        return new BinConstant(this.value);
     }
 }

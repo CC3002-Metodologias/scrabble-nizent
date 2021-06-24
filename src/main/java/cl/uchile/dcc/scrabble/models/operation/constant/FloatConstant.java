@@ -15,6 +15,20 @@ public class FloatConstant extends AbstractConstant{
     }
 
     @Override
+    public boolean equals(Object obj){
+        if(obj instanceof FloatConstant){
+            FloatConstant floatConstant = (FloatConstant) obj;
+            return floatConstant.value().equals(this.value);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        return this.value.hashCode();
+    }
+
+    @Override
     public Constant add(Constant constant) {
         return constant.addToFloat(this);
     }

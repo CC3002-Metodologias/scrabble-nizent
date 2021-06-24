@@ -15,6 +15,20 @@ public class IntConstant extends AbstractConstant{
     }
 
     @Override
+    public boolean equals(Object obj){
+        if(obj instanceof IntConstant){
+            IntConstant intConstant = (IntConstant) obj;
+            return intConstant.value().equals(this.value);
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode(){
+        return this.value.hashCode();
+    }
+
+    @Override
     public Constant add(Constant constant) {
         return constant.addToInt(this);
     }
