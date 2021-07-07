@@ -1,5 +1,7 @@
 package cl.uchile.dcc.scrabble.test.models.operation.logical;
 
+import cl.uchile.dcc.scrabble.models.operation.arithmetic.Add;
+import cl.uchile.dcc.scrabble.models.operation.arithmetic.Sub;
 import cl.uchile.dcc.scrabble.models.operation.constant.BinConstant;
 import cl.uchile.dcc.scrabble.models.operation.constant.FloatConstant;
 import cl.uchile.dcc.scrabble.models.operation.constant.IntConstant;
@@ -9,11 +11,33 @@ import cl.uchile.dcc.scrabble.models.type.ScrabbleBinary;
 import cl.uchile.dcc.scrabble.models.type.ScrabbleFloat;
 import cl.uchile.dcc.scrabble.models.type.ScrabbleInt;
 import org.apache.commons.lang3.ObjectUtils;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class OrTest extends LogicalOperationTest {
+    Or op;
+
+    @BeforeEach
+    void init(){
+        op = new Or(trueBool, new Sub(binConstant, binConstant));
+    }
+
+    @Test
+    void constructorTest() {
+        assertEquals(new Or(trueBool, new Sub(binConstant, binConstant)), op);
+        assertEquals((new Or(trueBool, new Sub(binConstant, binConstant))).hashCode(),
+                op.hashCode());
+        assertNotEquals(new Or(binConstant, binConstant), op);
+        assertNotEquals(op, new Add(binConstant, binConstant));
+    }
+
+    @Test
+    void toStringTest(){
+        assertEquals("Or{SBool(true), Sub{SBin(101), SBin(101)}}", op.toString());
+    }
+
     @Test
     void evaluateTest(){
         operation = new Or(trueBool, falseBool);

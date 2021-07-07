@@ -38,4 +38,9 @@ public class StringConstant extends AbstractConstant{
     public Constant addToString(StringConstant stringConstant) {
         return StringFactory.getConstant(stringConstant.value().sum(this.value));
     }
+
+    @Override
+    public String toString(){
+        return "SString(" +this.value.toString()+ ")";
+    }
 }

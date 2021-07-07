@@ -38,11 +38,6 @@ public abstract class AbstractConstant implements Constant {
     }
 
     @Override
-    public Constant addToString(StringConstant stringConstant) {
-        return null;
-    }
-
-    @Override
     public Constant addToBin(BinConstant binConstant) {
         return null;
     }

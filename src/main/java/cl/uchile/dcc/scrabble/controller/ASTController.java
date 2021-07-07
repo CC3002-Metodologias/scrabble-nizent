@@ -17,11 +17,7 @@ import java.util.List;
 public class ASTController {
     private final List<OperableEntity> operations = new ArrayList<>();
 
-    public void addStringConstant(ScrabbleString value){
-        StringFactory.getConstant(value);
-    }
-
-    public Add addStringOperation(ScrabbleString sString, Operation operation){
+    public Add addStringOperation(ScrabbleString sString, OperableEntity operation){
         return new Add(StringFactory.getConstant(sString),
                 operation);
     }

@@ -1,5 +1,6 @@
 package cl.uchile.dcc.scrabble.test.models.operation.constant;
 
+import cl.uchile.dcc.scrabble.models.operation.constant.Constant;
 import cl.uchile.dcc.scrabble.models.operation.constant.FloatConstant;
 import cl.uchile.dcc.scrabble.models.operation.constant.StringConstant;
 import cl.uchile.dcc.scrabble.models.operation.constantFactory.StringFactory;
@@ -42,5 +43,20 @@ public class StringConstantTest {
     void addToStringTest(){
         assertEquals(new StringConstant(new ScrabbleString(value).sum(new ScrabbleString("7"))),
                 constant.add(new StringConstant(new ScrabbleString("7"))));
+    }
+
+    @Test
+    void invalidOpsTest(){
+        assertNull(constant.sub(constant));
+        assertNull(constant.mult(constant));
+        assertNull(constant.div(constant));
+        assertNull(constant.and(constant));
+        assertNull(constant.or(constant));
+        assertNull(constant.negate());
+    }
+
+    @Test
+    void toStringTest(){
+        assertEquals("SString(Hola mundo)", constant.toString());
     }
 }

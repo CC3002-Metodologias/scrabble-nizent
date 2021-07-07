@@ -157,4 +157,9 @@ public class BinConstant extends AbstractConstant {
     public Constant negate(){
         return BinFactory.getConstant(this.value.negate());
     }
+
+    @Override
+    public String toString(){
+        return "SBin(" +this.value.toString()+ ")";
+    }
 }

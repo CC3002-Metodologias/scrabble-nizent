@@ -6,8 +6,8 @@ import cl.uchile.dcc.scrabble.models.type.ScrabbleString;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StringFactory {
-    static Map<ScrabbleString, StringConstant> variable = new HashMap<>();
+public class StringFactory implements ConstantFactory{
+    private static Map<ScrabbleString, StringConstant> variable = new HashMap<>();
 
     public static StringConstant getConstant(ScrabbleString value){
         StringConstant stringConstant = variable.get(value);

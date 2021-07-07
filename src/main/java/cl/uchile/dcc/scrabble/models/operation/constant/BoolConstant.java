@@ -70,4 +70,9 @@ public class BoolConstant extends AbstractConstant {
     public Constant negate(){
         return BoolFactory.getConstant(this.value.negate());
     }
+
+    @Override
+    public String toString(){
+        return "SBool(" +this.value.toString()+ ")";
+    }
 }

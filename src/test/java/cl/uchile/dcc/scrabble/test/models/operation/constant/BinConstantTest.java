@@ -206,4 +206,14 @@ public class BinConstantTest {
         assertEquals(new BinConstant(new ScrabbleBinary("1010")),
                 constant.negate());
     }
+
+    @Test
+    void evaluateTest(){
+        assertEquals(constant, constant.evaluate());
+    }
+
+    @Test
+    void toStringTest(){
+        assertEquals("SBin(0101)", constant.toString());
+    }
 }

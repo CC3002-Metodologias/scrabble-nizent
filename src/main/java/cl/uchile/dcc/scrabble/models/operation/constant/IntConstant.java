@@ -115,4 +115,9 @@ public class IntConstant extends AbstractConstant{
     public Constant divToFloat(FloatConstant floatConstant) {
         return FloatFactory.getConstant(this.value.divideToFloat(floatConstant.value()));
     }
+
+    @Override
+    public String toString(){
+        return "SInt(" +this.value.toString()+ ")";
+    }
 }

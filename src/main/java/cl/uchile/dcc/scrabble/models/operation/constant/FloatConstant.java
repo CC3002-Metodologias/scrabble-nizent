@@ -3,7 +3,6 @@ package cl.uchile.dcc.scrabble.models.operation.constant;
 import cl.uchile.dcc.scrabble.models.operation.constantFactory.FloatFactory;
 import cl.uchile.dcc.scrabble.models.operation.constantFactory.StringFactory;
 import cl.uchile.dcc.scrabble.models.type.ScrabbleFloat;
-import cl.uchile.dcc.scrabble.models.type.ScrabbleInt;
 
 public class FloatConstant extends AbstractConstant{
     private final ScrabbleFloat value;
@@ -93,5 +92,10 @@ public class FloatConstant extends AbstractConstant{
     @Override
     public Constant divToFloat(FloatConstant floatConstant) {
         return FloatFactory.getConstant(this.value.divideToFloat(floatConstant.value()));
+    }
+
+    @Override
+    public String toString(){
+        return "SFloat(" +this.value.toString()+ ")";
     }
 }

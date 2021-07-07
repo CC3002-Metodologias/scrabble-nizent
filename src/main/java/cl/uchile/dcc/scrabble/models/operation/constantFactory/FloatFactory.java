@@ -6,8 +6,8 @@ import cl.uchile.dcc.scrabble.models.type.ScrabbleFloat;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FloatFactory {
-    static Map<ScrabbleFloat, FloatConstant> variable = new HashMap<>();
+public class FloatFactory implements ConstantFactory{
+    private static Map<ScrabbleFloat, FloatConstant> variable = new HashMap<>();
 
     public static FloatConstant getConstant(ScrabbleFloat value){
         FloatConstant floatConstant = variable.get(value);
