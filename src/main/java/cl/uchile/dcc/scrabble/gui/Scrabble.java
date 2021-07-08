@@ -1,9 +1,14 @@
 package cl.uchile.dcc.scrabble.gui;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.TilePane;
 import javafx.stage.Stage;
 
 /**
@@ -22,13 +27,26 @@ public class Scrabble extends Application {
 
   @Override
   public void start(Stage primaryStage) {
-    primaryStage.setTitle("Final reality");
+    primaryStage.setTitle("Scrabble");
 
-    Label label = new Label("This will be an app sometime");
-    label.setAlignment(Pos.CENTER);
+    Button addButton = new Button("Create an Add");
+    TilePane root = new TilePane();
+    root.setAlignment(Pos.CENTER);
 
+    Label label = new Label();
+
+    EventHandler<ActionEvent> event = new EventHandler<ActionEvent>() {
+      public void handle(ActionEvent e)
+      {
+        label.setText("new Add(7,0)");
+      }
+    };
+
+    addButton.setOnAction(event);
+    root.getChildren().add(addButton);
+    root.getChildren().add(label);
     // This sets the size of the Scene to be 400px wide, 200px high
-    Scene scene = new Scene(label, 400, 200);
+    Scene scene = new Scene(root, 400, 200);
     primaryStage.setScene(scene);
 
     primaryStage.show();
