@@ -95,3 +95,5 @@ cl/uchile/dcc/scrabble/models/operation/operationFactory/MultFactory.java
  cl.uchile.dcc.scrabble.models.operation.operationFactory.MultFactory
 cl/uchile/dcc/scrabble/controller/ASTController.java
  cl.uchile.dcc.scrabble.controller.ASTController
+cl/uchile/dcc/scrabble/models/operation/Variable.java
+ cl.uchile.dcc.scrabble.models.operation.Variable
