@@ -238,6 +238,18 @@ value2.and(value2); // returns a BoolConstant containing true
 value2.and(value1); // returns null, because float is not a logical component
 ```
 
+**VARIABLES**
+
+The class Variable implements the OperableEntity interface, and it represents variables 
+that can be assigned. For example
+
+```java 
+Variable x = new Variable("x");
+BinConstant binConstant = BinFactory.getConstant(new ScrabbleBinary("0"));
+x.assign(binConstant);
+binConstant.equals(x.evaluate()); // returns true 
+```
+
 # Memory optimization
 
 This program uses Flyweight Pattern to save memory. So there are defined Constant factories, that has a static map inside and 
