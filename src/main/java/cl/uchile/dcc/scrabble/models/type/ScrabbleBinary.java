@@ -1,7 +1,5 @@
 package cl.uchile.dcc.scrabble.models.type;
 
-import cl.uchile.dcc.scrabble.gui.Scrabble;
-
 /**
  * This class represents a binary number and its behavior
  * Negative numbers start with a '1' char, and positive numbers start with '0'
@@ -120,7 +118,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      *      the sum of the values
      */
     @Override
-    public IInteger sumToBinary(ScrabbleBinary scrabbleBinary) {
+    public ScrabbleBinary sumToBinary(ScrabbleBinary scrabbleBinary) {
         return new ScrabbleInt(scrabbleBinary.toInt()+this.toInt()).transformToScrabbleBinary();
     }
 
@@ -132,7 +130,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      *      the result of the input ScrabbleBinary int value minus the ScrabbleBinary int value
      */
     @Override
-    public IInteger subtractToBinary(ScrabbleBinary scrabbleBinary) {
+    public ScrabbleBinary subtractToBinary(ScrabbleBinary scrabbleBinary) {
         return new ScrabbleInt(scrabbleBinary.toInt()-this.toInt()).transformToScrabbleBinary();
     }
 
@@ -181,7 +179,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      * @return
      */
     @Override
-    public IStandard sumToFloat(ScrabbleFloat scrabbleFloat) {
+    public ScrabbleFloat sumToFloat(ScrabbleFloat scrabbleFloat) {
         return new ScrabbleFloat(scrabbleFloat.value()+this.toInt());
     }
 
@@ -195,7 +193,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      * @return
      */
     @Override
-    public IStandard subtractToFloat(ScrabbleFloat scrabbleFloat) {
+    public ScrabbleFloat subtractToFloat(ScrabbleFloat scrabbleFloat) {
         return new ScrabbleFloat(scrabbleFloat.value()-this.toInt());
     }
 
@@ -209,7 +207,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      * @return
      */
     @Override
-    public IStandard divideToFloat(ScrabbleFloat scrabbleFloat) {
+    public ScrabbleFloat divideToFloat(ScrabbleFloat scrabbleFloat) {
         return new ScrabbleFloat(scrabbleFloat.value()/this.toInt());
     }
 
@@ -223,7 +221,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      * @return
      */
     @Override
-    public IStandard multiplyToFloat(ScrabbleFloat scrabbleFloat) {
+    public ScrabbleFloat multiplyToFloat(ScrabbleFloat scrabbleFloat) {
         return new ScrabbleFloat(scrabbleFloat.value()*this.toInt());
     }
 
@@ -235,7 +233,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      *      the result of the input ScrabbleBinary int value divided by the ScrabbleBinary int value
      */
     @Override
-    public IInteger divideToBinary(ScrabbleBinary scrabbleBinary) {
+    public ScrabbleBinary divideToBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(scrabbleBinary.toInt()/this.toInt())).transformToScrabbleBinary();
     }
 
@@ -247,7 +245,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      *      the multiplication between int equivalent values of the binary String's
      */
     @Override
-    public IInteger multiplyToBinary(ScrabbleBinary scrabbleBinary) {
+    public ScrabbleBinary multiplyToBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(scrabbleBinary.toInt()*this.toInt())).transformToScrabbleBinary();
     }
 

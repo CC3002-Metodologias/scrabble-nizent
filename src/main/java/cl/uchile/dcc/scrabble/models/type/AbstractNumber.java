@@ -60,26 +60,26 @@ public abstract class AbstractNumber extends AbstractScrabbleType implements INu
      * @param scrabbleFloat the Scrabble Float object
      * @return the INumber result by summing both objects
      */
-    public abstract IStandard sumToFloat(ScrabbleFloat scrabbleFloat);
+    public abstract ScrabbleFloat sumToFloat(ScrabbleFloat scrabbleFloat);
 
     /**
      * Subtracts to a ScrabbleFloat
      * @param scrabbleFloat the ScrabbleFloat object
      * @return a new INumber containing the result
      */
-    public abstract IStandard subtractToFloat(ScrabbleFloat scrabbleFloat);
+    public abstract ScrabbleFloat subtractToFloat(ScrabbleFloat scrabbleFloat);
 
     /**
      * Divides a ScrabbleFloat
      * @param scrabbleFloat the ScrabbleFloat object
      * @return a new INumber containing the division result between values
      */
-    public abstract IStandard divideToFloat(ScrabbleFloat scrabbleFloat);
+    public abstract ScrabbleFloat divideToFloat(ScrabbleFloat scrabbleFloat);
 
     /**
      * Multiplies a ScrabbleFloat
      * @param scrabbleFloat the ScrabbleFloat object
      * @return a new INumber containing the multiplication of its values
      */
-    public abstract IStandard multiplyToFloat(ScrabbleFloat scrabbleFloat);
+    public abstract ScrabbleFloat multiplyToFloat(ScrabbleFloat scrabbleFloat);
 }

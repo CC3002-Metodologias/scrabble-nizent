@@ -44,26 +44,26 @@ public interface INumber extends IType {
      * @param scrabbleFloat the Scrabble Float object
      * @return the INumber result by summing both objects
      */
-    IStandard sumToFloat(ScrabbleFloat scrabbleFloat);
+    ScrabbleFloat sumToFloat(ScrabbleFloat scrabbleFloat);
 
     /**
      * Subtracts to a ScrabbleFloat
      * @param scrabbleFloat the ScrabbleFloat object
      * @return a new INumber containing the result
      */
-    IStandard subtractToFloat(ScrabbleFloat scrabbleFloat);
+    ScrabbleFloat subtractToFloat(ScrabbleFloat scrabbleFloat);
 
     /**
      * Divides a ScrabbleFloat
      * @param scrabbleFloat the ScrabbleFloat object
      * @return a new INumber containing the division result between values
      */
-    IStandard divideToFloat(ScrabbleFloat scrabbleFloat);
+    ScrabbleFloat divideToFloat(ScrabbleFloat scrabbleFloat);
 
     /**
      * Multiplies a ScrabbleFloat
      * @param scrabbleFloat the ScrabbleFloat object
      * @return a new INumber containing the multiplication of its values
      */
-    IStandard multiplyToFloat(ScrabbleFloat scrabbleFloat);
+    ScrabbleFloat multiplyToFloat(ScrabbleFloat scrabbleFloat);
 }
