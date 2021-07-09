@@ -12,8 +12,8 @@ _CC3002 Metodologías de Diseño y programación_ of the
 _University of Chile_.
 
 ---
-
-Dear user, this program has 5 usable classes. Every class has it own getters and setters called
+# Types
+Dear user, the types are defined by 5 usable classes. Every class has it own getters and setters called
 Value() and setValue(type value), and they are compared by its value overriding equals(Object obj) method. 
 
 1. ScrabbleString: This class wraps a String value. 
@@ -183,5 +183,128 @@ sFloat.divideBy(new ScrabbleFloat(2.5)); // returns a new ScrabbleFloat containi
 
 There are more functionalities that you can check, every method is documented. The classes
 structure may change in the future.
+
+# Operations
+
+For the operation modelling, there is defined the interface OperableEntity that represents an operable entity, and it is used the Composite 
+Pattern to define them. There are two kinds of operable entities. 
+* ```interface Operation```: This interface represents the operations, that can be ```LogicalOperation or ArithmeticOperation```. The arithmetic 
+operations are the classes ```Add, Sub, Mult & Div```, each one refers to addition, subtraction, multiplication and division respectively. On
+the other hand, logical operations are represented by the classes ```And, Or & Not``` that refers to logical and, or and negation respectively. 
+* ```interface Constant```: This interface represents constant values, that can be ```BinConstant, FloatConstant, StringConstant, BoolConstant
+ and IntConstant ```
+ 
+ **OPERATIONS**
+ 
+ You can create a lot of operations, for example
+ ```java 
+bin = new BinConstant(new ScrabbleBinary("1"));
+Add add = new Add(new negation(bin), new IntConstant(new ScrabbleInt(1)));
+Sub sub = new sub(new FloatConstant(new ScrabbleFloat(1)), add); 
+Mult mult = new Mult(sub, add);
+Div div = new Div(sub, sub);
+```
+
+And you can evaluate the result of that operations (this is implemented using recursion), for example
+ ```java 
+add.evaluate(); // equivalent to (~1)+1 = 1, because ~1=0, this must return a BinConstant containing "1"
+sub.evaluate(); // returns a FloatConstant containing 0.0
+mult.evaluate(); // returns a FloatConstant containing 1.0
+div.evaluate(); // returns a FloatConstant containing 1.0
+```
+
+Finally you can get the String representation of the operations with toString() method
+
+```java 
+add.toString(); // returns "Add{Not(SBin(1), SInt(1))}"
+```
+
+Also, you can concatenate Strings as left operand with everything as the right operand
+```java 
+Add addString = new Add(new StringConstant(new ScrabbleString("Hello world")), new BoolConstant(new ScrabbleBool(true))); 
+addString.evaluate(); // returns "Hello worldtrue"
+```
+**CONSTANTS**
+
+There are constants that can't change its value. Everyone, has defined arithmetic and logical operations, but those who
+can't perform a operation returns null instead of trying to get the result, also, it is used Double Dispath to implement
+the operations (see addToString, subToFloat, ... methods). For example
+```java 
+FloatConstant value1 = new FloatConstant(new ScrabbleFloat(1));
+BoolConstant value2 = new BoolConstant(new ScrabbleBool(true));
+value1.add(value1); // returns a FloatConstant containing ScrabbleFloat(2)
+value1.add(value2); // returns null
+value2.and(value2); // returns a BoolConstant containing true
+value2.and(value1); // returns null, because float is not a logical component
+```
+
+**VARIABLES**
+
+The class Variable implements the OperableEntity interface, and it represents variables 
+that can be assigned. For example
+
+```java 
+Variable x = new Variable("x");
+BinConstant binConstant = BinFactory.getConstant(new ScrabbleBinary("0"));
+x.assign(binConstant);
+binConstant.equals(x.evaluate()); // returns true 
+```
+
+# Memory optimization
+
+This program uses Flyweight Pattern to save memory. So there are defined Constant factories, that has a static map inside and 
+has the static method getConstant(IType i) (Types are defined as the key, and values are the constants) to check if the object has been already created, and if not it creates a new one and save it, 
+then return the object. The factories are
+
+```java 
+class BinFactory;
+class FloatFactory;
+class IntFactory;
+class StringFactory;
+class BoolFactory;
+```
+
+For example, you can call
+
+```java 
+BinFactory.getConstant(new ScrabbleBinary("111")); 
+// creates the object and saves in the hash map
+
+BinFactory.getConstant(new ScrabbleBinary("111")); 
+// gets the constant already created
+```
+And that instance will be saved in the class. 
+
+# Operations implemented correctly
+
+For this purpose, there were created 
+* Operations factories: There were only defined for the operations that have 2 operands, they are
+ AddFactory, SubFactory, MultFactory, DivFactory, AndFactory & OrFactory. The purpose of this factories 
+ is to simplify the controller, because arithmetic operations are similar in behavior. For example, you can 
+ add, sub, mult & div between float and bin, but not bin and float. If these factories doesn't exist, 
+ the program must have 1 method for every kind of operations that checks the correct construction of operations in the
+ controller. Factories are classified with the interfaces LogicalOperationFactory & ArithmeticOperationFactory. 
+  
+```java 
+AddFactory addFactory = new AddFactory();
+// creates the factory
+BinConstant bin = BinFactory.getConstant(new ScrabbleBinary("1")));
+addFactory.create(bin, bin); 
+// creates the operation
+```
+
+* Controller: Defined in the ASTController class. 
+
+```java 
+ASTController astController = new ASTController();
+AddFactory addFactory = new AddFactory();
+SubFactory subFactory = new SubFactory();
+ScrabbleBinary sbin = new ScrabbleBinary("1101010101");
+ScrabbleFloat sfloat = new ScrabbleFloat(7);
+
+astController.operateBinWithBin(sbin, sbin, addFactory);
+astController.operateFloatWithBin(sfloat, bin, subFactory);
+// creates operations between valid types
+```
 
 **The rest of the documentation is left for the users of this template to complete**
