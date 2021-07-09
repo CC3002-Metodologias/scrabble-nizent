@@ -1,24 +1,76 @@
-cl/uchile/dcc/scrabble/test/AbstractScrabbleTypeTest.java
- cl.uchile.dcc.scrabble.test.AbstractScrabbleTypeTest
-cl/uchile/dcc/scrabble/test/IIntegerTest.java
- cl.uchile.dcc.scrabble.test.IIntegerTest
-cl/uchile/dcc/scrabble/test/ScrabbleIntTest.java
- cl.uchile.dcc.scrabble.test.ScrabbleIntTest
-cl/uchile/dcc/scrabble/test/ITypeTest.java
- cl.uchile.dcc.scrabble.test.ITypeTest
-cl/uchile/dcc/scrabble/test/ILogicTest.java
- cl.uchile.dcc.scrabble.test.ILogicTest
-cl/uchile/dcc/scrabble/test/IStandardTest.java
- cl.uchile.dcc.scrabble.test.IStandardTest
-cl/uchile/dcc/scrabble/test/IEncodedIntegerTest.java
- cl.uchile.dcc.scrabble.test.IEncodedIntegerTest
-cl/uchile/dcc/scrabble/test/ScrabbleBinaryTest.java
- cl.uchile.dcc.scrabble.test.ScrabbleBinaryTest
-cl/uchile/dcc/scrabble/test/ScrabbleFloatTest.java
- cl.uchile.dcc.scrabble.test.ScrabbleFloatTest
-cl/uchile/dcc/scrabble/test/INumberTest.java
- cl.uchile.dcc.scrabble.test.INumberTest
-cl/uchile/dcc/scrabble/test/ScrabbleBoolTest.java
- cl.uchile.dcc.scrabble.test.ScrabbleBoolTest
-cl/uchile/dcc/scrabble/test/ScrabbleStringTest.java
- cl.uchile.dcc.scrabble.test.ScrabbleStringTest
+cl/uchile/dcc/scrabble/test/models/type/AbstractScrabbleTypeTest.java
+ cl.uchile.dcc.scrabble.test.models.type.AbstractScrabbleTypeTest
+cl/uchile/dcc/scrabble/test/models/operation/constantFactory/BoolFactoryTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.constantFactory.BoolFactoryTest
+cl/uchile/dcc/scrabble/test/controller/ASTControllerTest.java
+ cl.uchile.dcc.scrabble.test.controller.ASTControllerTest
+cl/uchile/dcc/scrabble/test/models/type/INumberTest.java
+ cl.uchile.dcc.scrabble.test.models.type.INumberTest
+cl/uchile/dcc/scrabble/test/models/operation/arithmetic/AbstractOperationTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.arithmetic.AbstractOperationTest
+cl/uchile/dcc/scrabble/test/models/operation/operationFactory/AddFactoryTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.operationFactory.AddFactoryTest
+cl/uchile/dcc/scrabble/test/models/operation/arithmetic/DivTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.arithmetic.DivTest
+cl/uchile/dcc/scrabble/test/models/operation/constantFactory/IntFactoryTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.constantFactory.IntFactoryTest
+cl/uchile/dcc/scrabble/test/models/operation/logical/OrTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.logical.OrTest
+cl/uchile/dcc/scrabble/test/models/operation/operationFactory/AndFactoryTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.operationFactory.AndFactoryTest
+cl/uchile/dcc/scrabble/test/models/operation/constant/IntConstantTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.constant.IntConstantTest
+cl/uchile/dcc/scrabble/test/models/operation/constantFactory/FloatFactoryTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.constantFactory.FloatFactoryTest
+cl/uchile/dcc/scrabble/test/models/type/ScrabbleBinaryTest.java
+ cl.uchile.dcc.scrabble.test.models.type.ScrabbleBinaryTest
+cl/uchile/dcc/scrabble/test/models/type/ITypeTest.java
+ cl.uchile.dcc.scrabble.test.models.type.ITypeTest
+cl/uchile/dcc/scrabble/test/models/type/ScrabbleFloatTest.java
+ cl.uchile.dcc.scrabble.test.models.type.ScrabbleFloatTest
+cl/uchile/dcc/scrabble/test/models/operation/logical/LogicalOperationTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.logical.LogicalOperationTest
+cl/uchile/dcc/scrabble/test/models/operation/constant/BinConstantTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.constant.BinConstantTest
+cl/uchile/dcc/scrabble/test/models/operation/constant/StringConstantTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.constant.StringConstantTest
+cl/uchile/dcc/scrabble/test/models/operation/constantFactory/BinFactoryTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.constantFactory.BinFactoryTest
+cl/uchile/dcc/scrabble/test/models/operation/arithmetic/AddTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.arithmetic.AddTest
+cl/uchile/dcc/scrabble/test/models/type/IIntegerTest.java
+ cl.uchile.dcc.scrabble.test.models.type.IIntegerTest
+cl/uchile/dcc/scrabble/test/models/type/ScrabbleBoolTest.java
+ cl.uchile.dcc.scrabble.test.models.type.ScrabbleBoolTest
+cl/uchile/dcc/scrabble/test/models/operation/constantFactory/StringFactoryTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.constantFactory.StringFactoryTest
+cl/uchile/dcc/scrabble/test/models/type/IStandardTest.java
+ cl.uchile.dcc.scrabble.test.models.type.IStandardTest
+cl/uchile/dcc/scrabble/test/models/operation/constant/FloatConstantTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.constant.FloatConstantTest
+cl/uchile/dcc/scrabble/test/models/operation/logical/NotTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.logical.NotTest
+cl/uchile/dcc/scrabble/test/models/type/IEncodedIntegerTest.java
+ cl.uchile.dcc.scrabble.test.models.type.IEncodedIntegerTest
+cl/uchile/dcc/scrabble/test/models/operation/logical/AndTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.logical.AndTest
+cl/uchile/dcc/scrabble/test/models/operation/arithmetic/MultTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.arithmetic.MultTest
+cl/uchile/dcc/scrabble/test/models/type/ScrabbleStringTest.java
+ cl.uchile.dcc.scrabble.test.models.type.ScrabbleStringTest
+cl/uchile/dcc/scrabble/test/models/operation/arithmetic/SubTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.arithmetic.SubTest
+cl/uchile/dcc/scrabble/test/models/operation/operationFactory/DivFactoryTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.operationFactory.DivFactoryTest
+cl/uchile/dcc/scrabble/test/models/operation/operationFactory/SubFactoryTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.operationFactory.SubFactoryTest
+cl/uchile/dcc/scrabble/test/models/type/ScrabbleIntTest.java
+ cl.uchile.dcc.scrabble.test.models.type.ScrabbleIntTest
+cl/uchile/dcc/scrabble/test/models/operation/operationFactory/OrFactoryTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.operationFactory.OrFactoryTest
+cl/uchile/dcc/scrabble/test/models/operation/constant/BoolConstantTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.constant.BoolConstantTest
+cl/uchile/dcc/scrabble/test/models/operation/operationFactory/MultFactoryTest.java
+ cl.uchile.dcc.scrabble.test.models.operation.operationFactory.MultFactoryTest
+cl/uchile/dcc/scrabble/test/models/type/ILogicTest.java
+ cl.uchile.dcc.scrabble.test.models.type.ILogicTest
