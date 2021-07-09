@@ -166,7 +166,7 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
      *      value and the ScrabbleBinary binary String int value
      */
     @Override
-    public IInteger sumToBinary(ScrabbleBinary scrabbleBinary) {
+    public ScrabbleBinary sumToBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(this.value+scrabbleBinary.toInt())).transformToScrabbleBinary();
     }
 
@@ -178,7 +178,7 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
      *      ScrabbleBinary int equivalent value minus the ScrabbleInt value
      */
     @Override
-    public IInteger subtractToBinary(ScrabbleBinary scrabbleBinary) {
+    public ScrabbleBinary subtractToBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(scrabbleBinary.toInt()-this.value)).transformToScrabbleBinary();
     }
 
@@ -225,7 +225,7 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
      *      ScrabbleBinary input int value divided by the ScrabbleInt value
      */
     @Override
-    public IInteger divideToBinary(ScrabbleBinary scrabbleBinary) {
+    public ScrabbleBinary divideToBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(scrabbleBinary.toInt()/this.value)).transformToScrabbleBinary();
     }
 
@@ -237,7 +237,7 @@ public class ScrabbleInt extends AbstractNumber implements IInteger, IStandard {
      *      the multiplication of its values
      */
     @Override
-    public IInteger multiplyToBinary(ScrabbleBinary scrabbleBinary) {
+    public ScrabbleBinary multiplyToBinary(ScrabbleBinary scrabbleBinary) {
         return (new ScrabbleInt(scrabbleBinary.toInt()*this.value)).transformToScrabbleBinary();
     }
 
