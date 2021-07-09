@@ -4,7 +4,7 @@ package cl.uchile.dcc.scrabble.models.type;
  * Represents an String and its behavior
  * @author Nicolás Zenteno Guardia
  */
-public class ScrabbleString extends AbstractScrabbleType implements NotNumber{
+public class ScrabbleString extends AbstractScrabbleType {
     private String value;
 
     /**

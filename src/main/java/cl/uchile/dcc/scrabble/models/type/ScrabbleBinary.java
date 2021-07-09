@@ -408,7 +408,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      * @return an ILogic with the result
      */
     @Override
-    public ScrabbleBinary and(ILogic iLogic) {
+    public ILogic and(ILogic iLogic) {
         return iLogic.andBinary(this);
     }
 
@@ -476,7 +476,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      * @return an ILogic with the result
      */
     @Override
-    public ScrabbleBinary or(ILogic iLogic) {
+    public ILogic or(ILogic iLogic) {
         return iLogic.orBinary(this);
     }
 
@@ -499,7 +499,15 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
      * @return a new ScrabbleBinary with the result of the negation
      */
     @Override
-    public ScrabbleBinary negate() {
+    public ILogic negate() {
+        return new ScrabbleBinary(this.negatedString());
+    }
+
+    /**
+     * Returns the negation of the binary String value
+     * @return negation
+     */
+    public String negatedString(){
         StringBuilder negated = new StringBuilder();
         int len = this.value.length();
         int j;
@@ -507,7 +515,7 @@ public class ScrabbleBinary extends AbstractNumber implements IEncodedInteger, I
             j = len-i-1;
             negated.insert(0, negateBit(this.value.charAt(j)));
         }
-        return new ScrabbleBinary(negated.toString());
+        return negated.toString();
     }
 
     /**

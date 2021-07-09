@@ -4,7 +4,7 @@ package cl.uchile.dcc.scrabble.models.type;
  * Represents a Boolean an its behavior
  * @author Nicolás Zenteno Guardia
  */
-public class ScrabbleBool extends AbstractScrabbleType implements ILogic, NotNumber {
+public class ScrabbleBool extends AbstractScrabbleType implements ILogic {
     private boolean value;
 
     /**

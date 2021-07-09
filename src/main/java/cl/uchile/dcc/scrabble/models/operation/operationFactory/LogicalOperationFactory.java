@@ -5,8 +5,14 @@ import cl.uchile.dcc.scrabble.models.operation.arithmetic.ArithmeticOperation;
 import cl.uchile.dcc.scrabble.models.operation.logical.LogicalOperation;
 
 /**
- * This interface represents a 2 factor logical operation
+ * Represents a factory that creates a 2 factor logical operation
  */
 public interface LogicalOperationFactory {
+    /**
+     * Creates a new logical operation
+     * @param operand1 left operand
+     * @param operand2 right operand
+     * @return the operation
+     */
     LogicalOperation create(OperableEntity operand1, OperableEntity operand2);
 }
