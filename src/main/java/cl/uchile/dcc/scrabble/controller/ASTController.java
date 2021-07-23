@@ -4,6 +4,7 @@ import cl.uchile.dcc.scrabble.models.operation.OperableEntity;
 import cl.uchile.dcc.scrabble.models.operation.Operation;
 import cl.uchile.dcc.scrabble.models.operation.arithmetic.Add;
 import cl.uchile.dcc.scrabble.models.operation.arithmetic.ArithmeticOperation;
+import cl.uchile.dcc.scrabble.models.operation.constant.StringConstant;
 import cl.uchile.dcc.scrabble.models.operation.constantFactory.*;
 import cl.uchile.dcc.scrabble.models.operation.logical.LogicalOperation;
 import cl.uchile.dcc.scrabble.models.operation.logical.Not;
@@ -12,13 +13,49 @@ import cl.uchile.dcc.scrabble.models.operation.operationFactory.LogicalOperation
 import cl.uchile.dcc.scrabble.models.type.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * This class manages the correct construction of the operations
  */
 public class ASTController {
-    private final List<OperableEntity> operations = new ArrayList<>();
+    private final Map<String, OperableEntity> entities = new HashMap<>();
+    String STR_ID = "String";
+    String FLOAT_ID = "Float";
+    String BIN_ID = "Bin";
+    String BOOL_ID = "Bool";
+    String INT_ID = "Int";
+    String ADD_ID = "Add";
+    String MULT_ID = "Mult";
+    String DIV_ID = "Div";
+    String SUB_ID = "Sub";
+
+    public void add(String id){
+        OperableEntity entity = null;
+        if(id.contains(STR_ID)){
+            entity = StringFactory.getConstant(new ScrabbleString(""));
+        }
+        entities.put(id, entity);
+    }
+
+    public void updateConstant(String id, String value){
+        OperableEntity entity = null;
+        if(id.contains(STR_ID)){
+            entity = StringFactory.getConstant(new ScrabbleString(value));
+        }
+        entities.put(id, entity);
+    }
+
+    /**
+     * Evaluates the entity with the respective id
+     * @param id the id
+     * @return A string containing the result
+     */
+    public String evaluate(String id){
+        return entities.get(id).evaluate().toString();
+    }
 
     /**
      * Returns a new Add operation between a ScrabbleString and another entity
