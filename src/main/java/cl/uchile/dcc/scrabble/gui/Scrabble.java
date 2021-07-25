@@ -8,16 +8,18 @@ import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Bounds;
+import javafx.geometry.Pos;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.SnapshotParameters;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Circle;
-import javafx.scene.text.Text;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -48,11 +50,10 @@ public class Scrabble extends Application {
     @Override
     public void start(Stage primaryStage) {
         astController = new ASTController();
-
-        counts.put("Add", 0);
-        counts.put("Div", 0);
-        counts.put("Mul", 0);
-        counts.put("Sub", 0);
+        counts.put(ADD_ID, 0);
+        counts.put(DIV_ID, 0);
+        counts.put(MULT_ID, 0);
+        counts.put(SUB_ID, 0);
         counts.put(STR_ID, 0);
         counts.put(BIN_ID, 0);
         counts.put(BOOL_ID, 0);
@@ -60,90 +61,25 @@ public class Scrabble extends Application {
         counts.put(FLOAT_ID, 0);
         primaryStage.setTitle("Scrabble");
         root = new Pane();
-        Button addButton = new Button("+");
-        Button subButton = new Button("-");
-        Button mulButton = new Button("*");
-        Button divButton = new Button("/");
-        Button floatButton = new Button("Float");
-        Button intButton = new Button("Integer");
-        Button binButton = new Button("Binary");
-        Button boolButton = new Button("Bool");
-        Button stringButton = new Button("String");
-        VBox menu = new VBox(20,addButton, subButton, mulButton, divButton,
-            floatButton, intButton, binButton, boolButton, stringButton);
+        Node addCreator = operationCreator(ADD_ID);
+        Node subCreator = operationCreator(SUB_ID);
+        Node mulCreator = operationCreator(MULT_ID);
+        Node divCreator = operationCreator(DIV_ID);
+        Node stringCreator = constantCreator(STR_ID);
+        Node floatCreator = constantCreator(FLOAT_ID);
+        Node binCreator = constantCreator(BIN_ID);
+        Node boolCreator = constantCreator(BOOL_ID);
+        Node intCreator = constantCreator(INT_ID);
+        VBox menu = new VBox(20,addCreator, subCreator, mulCreator, divCreator,
+                floatCreator,intCreator,binCreator,boolCreator,stringCreator);
 
         Pane board = new Pane();
-        stringButton.addEventHandler(MouseEvent.MOUSE_CLICKED,
-            new EventHandler<MouseEvent>() {
-              @Override
-              public void handle(MouseEvent e) {
-                final Node str = createConstantPanel(STR_ID);
-                String id = STR_ID+counts.get(STR_ID);
-                System.out.println(id);
-                str.setId(id);
-                astController.add(id);
-                board.getChildren().add(str);
-                counts.put(STR_ID, counts.get(STR_ID)+1);
-                e.consume();
-              }
-            });
-
-        floatButton.addEventHandler(MouseEvent.MOUSE_CLICKED,
-            new EventHandler<MouseEvent>() {
-              @Override
-              public void handle(MouseEvent e) {
-                // create a new SC view
-                board.getChildren().add(makeDraggable(createConstantPanel("Float")));
-                e.consume();
-              }
-            });
-
-        boolButton.addEventHandler(MouseEvent.MOUSE_CLICKED,
-            new EventHandler<MouseEvent>() {
-              @Override
-              public void handle(MouseEvent e) {
-                board.getChildren().add(makeDraggable(createConstantPanel("Bool")));
-                e.consume();
-              }
-            });
-
-        binButton.addEventHandler(MouseEvent.MOUSE_CLICKED,
-            new EventHandler<MouseEvent>() {
-              @Override
-              public void handle(MouseEvent e) {
-                // create a new SC view
-                board.getChildren().add(makeDraggable(createConstantPanel("Bin")));
-                e.consume();
-              }
-            });
-    intButton.addEventHandler(MouseEvent.MOUSE_CLICKED,
-            new EventHandler<MouseEvent>() {
-              @Override
-              public void handle(MouseEvent e) {
-                  // create a new SC view
-                  final Node intView = makeDraggable(createConstantPanel("Int"));
-                  board.getChildren().add(intView);
-                  e.consume();
-              }
-            });
-    addButton.addEventHandler(MouseEvent.MOUSE_CLICKED,
-            new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent e) {
-                    // create a new SC view
-                    Node add = makeDraggable(
-                            createOperationPanel(ADD_ID));
-                    add.setId(ADD_ID+counts.get(ADD_ID));
-                    board.getChildren().add(add);
-                    counts.put(ADD_ID, counts.get(ADD_ID)+1);
-                    e.consume();
-                }
-            });
 
     root.getChildren().add(menu);
     root.getChildren().add(board);
 
-    scene = new Scene(root, 700, 600);
+    scene = new Scene(root, 1000, 600);
+    root.setStyle("-fx-background-color: white");
 
     primaryStage.setScene(scene);
 
@@ -167,8 +103,7 @@ public class Scrabble extends Application {
           public void handle(MouseEvent event) {
               node.setMouseTransparent(false);
               if(event.getClickCount()==2){
-
-                  Label value = new Label(astController.evaluate(wrapGroup.getId()));
+                  Label value = new Label(astController.evaluate(node.getId()));
                   Bounds b = wrapGroup.localToScene(wrapGroup.getBoundsInLocal());
                   value.relocate(b.getMinX(),b.getMinY()-20);
                   PauseTransition ps = new PauseTransition(Duration.seconds(2));
@@ -226,9 +161,18 @@ public class Scrabble extends Application {
       wrapGroup.setOnMouseDragReleased(new EventHandler<MouseDragEvent>() {
           @Override
           public void handle(MouseDragEvent event) {
-              Node inserted = makeDraggable((Node) event.getGestureSource());
+              Node source = (Node) event.getGestureSource();
+              Node inserted = makeDraggable(source);
               inserted.relocate(0,0);
+              String inserted_id = source.getId();
               node.getChildren().add(0, inserted);
+              String id = node.getId();
+              String op_id = node.getParent().getParent().getId();
+              if(id.contains("izq")){
+                  astController.addLeftOperand(op_id, inserted_id);
+              } else if (id.contains("der")){
+                  astController.addRightOperand(op_id, inserted_id);
+              }
               event.consume();
           }
       });
@@ -241,12 +185,17 @@ public class Scrabble extends Application {
     Label typeLabel = new Label(type+":");
     typeLabel.setStyle("-fx-text-fill: white;");
     final HBox panel = createHBox(6, typeLabel, textField);
+    // setId
+      String id = type+counts.get(type);
+      panel.setId(id);
+      astController.add(id);
+      counts.put(type, counts.get(type)+1);
     final Node constantPanel = makeDraggable(panel);
     configureBorder(panel);
       textField.textProperty().addListener(new ChangeListener<String>() {
           @Override
           public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-              astController.updateConstant(constantPanel.getId(), newValue);
+              astController.updateConstant(panel.getId(), newValue);
           }
       });
     return constantPanel;
@@ -258,8 +207,8 @@ public class Scrabble extends Application {
         String id = type + counts.get(type);
         Pane izq = new Pane();
         Pane der = new Pane();
-        izq.setPrefSize(80, 30);
-        der.setPrefSize(80, 30);
+        izq.setPrefSize(50, 30);
+        der.setPrefSize(50, 30);
         izq.setStyle("-fx-background-color: white");
         der.setStyle("-fx-background-color: white");
         izq.setId(id+"izq");
@@ -268,8 +217,60 @@ public class Scrabble extends Application {
         Node derWrapper = makeOperationInput(der);
         final HBox panel = createHBox(6, typeLabel, izqWrapper, derWrapper);
         configureBorder(panel);
-        panel.setId(id);
-        return panel;
+      panel.setId(id);
+      astController.add(id);
+      counts.put(type, counts.get(type)+1);
+        final Node opPanel = makeDraggable(panel);
+        return opPanel;
+  }
+
+  public Node constantCreator(String type){
+      final TextField textField = new TextField();
+      textField.setPrefWidth(40);
+      Label typeLabel = new Label(type+":");
+      typeLabel.setStyle("-fx-text-fill: white;");
+      final HBox panel = createHBox(6, typeLabel, textField);
+      configureBorder(panel);
+      panel.setPrefWidth(80);
+      panel.setTranslateX(10);
+      panel.setOnMouseClicked(new EventHandler<MouseEvent>() {
+          @Override
+          public void handle(MouseEvent event) {
+              if(event.getClickCount()==2){
+                  Node newConstant = createConstantPanel(type);
+                  newConstant.setTranslateX(200);
+                  newConstant.setTranslateY(200);
+                  root.getChildren().add(newConstant);
+              }
+          }
+      });
+      return panel;
+  }
+
+  public Node operationCreator(String type){
+      Label typeLabel = new Label(type+":");
+      typeLabel.setStyle("-fx-text-fill: white;");
+      Pane izq = new Pane();
+      Pane der = new Pane();
+      izq.setPrefSize(50, 30);
+      der.setPrefSize(50, 30);
+      izq.setStyle("-fx-background-color: white");
+      der.setStyle("-fx-background-color: white");
+      final HBox panel = createHBox(6, typeLabel, izq, der);
+      configureBorder(panel);
+      panel.setTranslateX(10);
+      panel.setOnMouseClicked(new EventHandler<MouseEvent>() {
+          @Override
+          public void handle(MouseEvent event) {
+              if(event.getClickCount()==2){
+                  Node newConstant = createOperationPanel(type);
+                  newConstant.setTranslateX(200);
+                  newConstant.setTranslateY(200);
+                  root.getChildren().add(newConstant);
+              }
+          }
+      });
+      return panel;
   }
 
   private static void configureBorder(final Region region) {

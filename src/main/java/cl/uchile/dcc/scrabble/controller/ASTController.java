@@ -21,7 +21,7 @@ import java.util.Map;
  * This class manages the correct construction of the operations
  */
 public class ASTController {
-    private final Map<String, OperableEntity> entities = new HashMap<>();
+    public final Map<String, AST> constructed = new HashMap<>();
     String STR_ID = "String";
     String FLOAT_ID = "Float";
     String BIN_ID = "Bin";
@@ -34,10 +34,27 @@ public class ASTController {
 
     public void add(String id){
         OperableEntity entity = null;
+        String ast_type = "";
         if(id.contains(STR_ID)){
+            ast_type = STR_ID;
             entity = StringFactory.getConstant(new ScrabbleString(""));
+        } else if (id.contains(ADD_ID)){
+            ast_type = ADD_ID;
         }
-        entities.put(id, entity);
+        constructed.put(id, new AST(ast_type));
+        constructed.get(id).setMainEntity(entity);
+    }
+
+    public void addLeftOperand(String op_id, String left_id){
+        if(op_id.contains(ADD_ID)){
+            constructed.get(op_id).setLeft(constructed.get(left_id));
+        }
+    }
+
+    public void addRightOperand(String op_id, String right_id){
+        if(op_id.contains(ADD_ID)){
+            constructed.get(op_id).setRight(constructed.get(right_id));
+        }
     }
 
     public void updateConstant(String id, String value){
@@ -45,7 +62,7 @@ public class ASTController {
         if(id.contains(STR_ID)){
             entity = StringFactory.getConstant(new ScrabbleString(value));
         }
-        entities.put(id, entity);
+        constructed.get(id).setMainEntity(entity);
     }
 
     /**
@@ -54,7 +71,7 @@ public class ASTController {
      * @return A string containing the result
      */
     public String evaluate(String id){
-        return entities.get(id).evaluate().toString();
+        return constructed.get(id).evaluate().toString();
     }
 
     /**
