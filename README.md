@@ -25,7 +25,18 @@ on the right side
 ![start1](https://github.com/nizent/images/blob/main/img3.png?raw=true)
 Once the element appears, you can drag it
 ![start1](https://github.com/nizent/images/blob/main/img4.png?raw=true)
-And you can set the constant value, by putting some text inside the textfield
+And you can set the constant value, by putting some text inside the textfield. Consider the next recommendations
+
+For Bool you must write true or false, 
+
+For String, write whatever you want, 
+
+For Int write a number without points (for example 123456789999) 
+
+For Float write a number with or without points (for example, 9.999 or 9)
+
+For Bin write only in 1010101 format, those who starts with 1 are negative and those who starts with 0 are positive
+
 ![start1](https://github.com/nizent/images/blob/main/img5.png?raw=true)
 If you need to know the element value, just double click over the draggable element and then will appear
 a green label containing the value
@@ -39,18 +50,6 @@ it will be set as left/right operand respectively
 ![start1](https://github.com/nizent/images/blob/main/img8.png?raw=true)
 You can evaluate the operation with a double click over the operation region (blue region), i recommend doing double click 
 on the symbol.  If the operation is not well built it will throw the message "Tree not correctly built".
-
-CONSTANTS ELEMENTS:
-
-For Bool you must write true or false, 
-
-For String, write whatever you want, 
-
-For Int write a number without points (for example 123456789999) 
-
-For Float write a number with or without points (for example, 9.999 or 9)
-
-For Bin write only in 1010101 format, those who starts with 1 are negative and those who starts with 0 are positive
 
 ![start1](https://github.com/nizent/images/blob/main/img9.png?raw=true) 
 In the last image, it is not well built because it doesn't have the right operand, it must be inserted, like in
