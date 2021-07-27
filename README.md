@@ -39,6 +39,19 @@ it will be set as left/right operand respectively
 ![start1](https://github.com/nizent/images/blob/main/img8.png?raw=true)
 You can evaluate the operation with a double click over the operation region (blue region), i recommend doing double click 
 on the symbol.  If the operation is not well built it will throw the message "Tree not correctly built".
+
+CONSTANTS ELEMENTS:
+
+For Bool you must write true or false, 
+
+For String, write whatever you want, 
+
+For Int write a number without points (for example 123456789999) 
+
+For Float write a number with or without points (for example, 9.999 or 9)
+
+For Bin write only in 1010101 format, those who starts with 1 are negative and those who starts with 0 are positive
+
 ![start1](https://github.com/nizent/images/blob/main/img9.png?raw=true) 
 In the last image, it is not well built because it doesn't have the right operand, it must be inserted, like in
 the next image
@@ -46,6 +59,7 @@ the next image
 And you can do any operation you want  
 ![start1](https://github.com/nizent/images/blob/main/img11.png?raw=true)
 In the last image, the operation was (99+"011")/9 = (99+3)/9 = 11.333
+
 # Model
 # Types
 Dear user, the types are defined by 5 usable classes. Every class has it own getters and setters called
