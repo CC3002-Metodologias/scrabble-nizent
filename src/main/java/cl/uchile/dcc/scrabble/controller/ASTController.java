@@ -1,7 +1,6 @@
 package cl.uchile.dcc.scrabble.controller;
 
 import cl.uchile.dcc.scrabble.models.operation.OperableEntity;
-import cl.uchile.dcc.scrabble.models.operation.Operation;
 import cl.uchile.dcc.scrabble.models.operation.arithmetic.Add;
 import cl.uchile.dcc.scrabble.models.operation.arithmetic.ArithmeticOperation;
 import cl.uchile.dcc.scrabble.models.operation.constantFactory.*;
@@ -11,14 +10,128 @@ import cl.uchile.dcc.scrabble.models.operation.operationFactory.ArithmeticOperat
 import cl.uchile.dcc.scrabble.models.operation.operationFactory.LogicalOperationFactory;
 import cl.uchile.dcc.scrabble.models.type.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This class manages the correct construction of the operations
  */
 public class ASTController {
-    private final List<OperableEntity> operations = new ArrayList<>();
+    private final Map<String, AST> constructed = new HashMap<>();
+
+    /**
+     * Adds an AST to the list
+     * @param id the AST id
+     */
+    public void add(String id){
+        OperableEntity entity = null;
+        String ast_type = "";
+        if(id.contains(ScrabbleTypes.STR_ID)){
+            ast_type = ScrabbleTypes.STR_ID;
+            entity = StringFactory.getConstant(new ScrabbleString(""));
+        } else if (id.contains(ScrabbleTypes.ADD_ID)){
+            ast_type = ScrabbleTypes.ADD_ID;
+        } else if (id.contains(ScrabbleTypes.FLOAT_ID)){
+            ast_type = ScrabbleTypes.FLOAT_ID;
+            entity = FloatFactory.getConstant(new ScrabbleFloat(0));
+        } else if (id.contains(ScrabbleTypes.INT_ID)){
+            ast_type = ScrabbleTypes.INT_ID;
+            entity = IntFactory.getConstant(new ScrabbleInt(0));
+        } else if (id.contains(ScrabbleTypes.BIN_ID)){
+            ast_type = ScrabbleTypes.BIN_ID;
+            entity = BinFactory.getConstant(new ScrabbleBinary("0"));
+        } else if (id.contains(ScrabbleTypes.BOOL_ID)){
+            ast_type = ScrabbleTypes.BOOL_ID;
+            entity = BoolFactory.getConstant(new ScrabbleBool(true));
+        } else if (id.contains(ScrabbleTypes.SUB_ID)){
+            ast_type = ScrabbleTypes.SUB_ID;
+        } else if (id.contains(ScrabbleTypes.DIV_ID)){
+            ast_type = ScrabbleTypes.DIV_ID;
+        } else if (id.contains(ScrabbleTypes.MULT_ID)){
+            ast_type = ScrabbleTypes.MULT_ID;
+        } else if (id.contains(ScrabbleTypes.AND_ID)){
+            ast_type = ScrabbleTypes.AND_ID;
+        } else if (id.contains(ScrabbleTypes.OR_ID)){
+            ast_type = ScrabbleTypes.OR_ID;
+        } else if (id.contains(ScrabbleTypes.NOT_ID)){
+            ast_type = ScrabbleTypes.NOT_ID;
+        }
+        constructed.put(id, new AST(ast_type));
+        constructed.get(id).setMainEntity(entity);
+    }
+
+    /**
+     * Gets an AST by id
+     * @param id the AST id
+     * @return the respective AST
+     */
+    public AST getAST(String id){
+        return constructed.get(id);
+    }
+
+    /**
+     * Adds a left operand to an AST
+     * @param op_id AST id
+     * @param left_id left operand id
+     */
+    public void addLeftOperand(String op_id, String left_id){
+        constructed.get(op_id).setLeft(constructed.get(left_id));
+    }
+
+    /**
+     * Adds a right operand to an AST
+     * @param op_id AST id
+     * @param right_id right operand id
+     */
+    public void addRightOperand(String op_id, String right_id){
+        constructed.get(op_id).setRight(constructed.get(right_id));
+    }
+
+    /**
+     * Updates the constant value
+     * @param id constant id
+     * @param value new value
+     */
+    public void updateConstant(String id, String value){
+        OperableEntity entity = null;
+        if(id.contains(ScrabbleTypes.STR_ID)){
+            entity = StringFactory.getConstant(new ScrabbleString(value));
+        } else if (id.contains(ScrabbleTypes.FLOAT_ID)){
+            try{
+                entity = FloatFactory.getConstant(new ScrabbleFloat(Double.parseDouble(value)));
+            } catch (NumberFormatException e){
+                // do nothing
+            }
+        } else if (id.contains(ScrabbleTypes.INT_ID)){
+            try {
+                entity = IntFactory.getConstant(new ScrabbleInt(Integer.parseInt(value)));
+            } catch (NumberFormatException e){
+                // do nothing
+            }
+        } else if (id.contains(ScrabbleTypes.BIN_ID)){
+            entity = BinFactory.getConstant(new ScrabbleBinary(value));
+        } else if (id.contains(ScrabbleTypes.BOOL_ID)){
+            entity = BoolFactory.getConstant(new ScrabbleBool(Boolean.parseBoolean(value)));
+        }
+        constructed.get(id).setMainEntity(entity);
+    }
+
+    /**
+     * Evaluates the entity with the respective id
+     * @param id the id
+     * @return A string containing the result
+     */
+    public String evaluate(String id){
+        String result;
+        try {
+            result = constructed.get(id).evaluate().toString();
+        } catch (NullPointerException e){
+            result = "(Tree not correctly built)";
+        }
+        int start = result.indexOf('(');
+        int end = result.indexOf(')');
+        return result.substring(start+1,end);
+    }
 
     /**
      * Returns a new Add operation between a ScrabbleString and another entity

@@ -22,7 +22,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="240f94ad-597d-4905-9927-740decbdbd4d" name="Default Changelist" comment="" />
+    <list default="true" id="240f94ad-597d-4905-9927-740decbdbd4d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/scrabble_test_ear_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/scrabble.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/AbstractScrabbleTypeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/IEncodedIntegerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/IIntegerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/ILogicTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/INumberTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/IStandardTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/ITypeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/ScrabbleBinaryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/ScrabbleBoolTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/ScrabbleFloatTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/ScrabbleIntTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/cl/uchile/dcc/scrabble/test/models/type/ScrabbleStringTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,11 +69,18 @@
         <option value="JavaFXApplication" />
         <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="CSS File" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1s8wF3bnlXSFfdpc0QPTzfK9GBq" />
@@ -65,13 +90,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="cl.uchile.dcc.scrabble.test.models.operation" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -79,7 +104,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -87,9 +112,12 @@
       <recent name="cl.uchile.dcc.scrabble.models.operation" />
       <recent name="cl.uchile.dcc.scrabble.test" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="cl.uchile.dcc.scrabble.models.operation" />
-      <recent name="cl.uchile.dcc.scrabble.models" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nicol\Documents\JavaProjects\scrabble-nizent\src\main\java\cl\uchile\dcc\scrabble\gui" />
+      <recent name="C:\Users\nicol\Documents\JavaProjects\scrabble-nizent" />
+      <recent name="C:\Users\nicol\Documents\JavaProjects\scrabble-nizent\src" />
+      <recent name="C:\Users\nicol\Documents\JavaProjects\scrabble-nizent\src\main" />
+      <recent name="C:\Users\nicol\Documents\JavaProjects\scrabble-nizent\src\main\java" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="cl.uchile.dcc.scrabble.test.models.operation" />
@@ -97,12 +125,13 @@
       <recent name="cl.uchile.dcc.scrabble.test.INumberTest" />
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nicol\Documents\JavaProjects\scrabble-nizent\src\test\java" />
-      <recent name="C:\Users\nicol\Documents\JavaProjects\scrabble-nizent\src" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="cl.uchile.dcc.scrabble.controller" />
+      <recent name="cl.uchile.dcc.scrabble.models.operation" />
+      <recent name="cl.uchile.dcc.scrabble.models" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in scrabble.test">
+  <component name="RunManager" selected="Application.Scrabble">
     <configuration name="Scrabble" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cl.uchile.dcc.scrabble.gui.Scrabble" />
       <module name="scrabble.main" />
@@ -127,34 +156,50 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AddTest.evaluateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ASTControllerTest.addLeftOperandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="scrabble.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cl.uchile.dcc.scrabble.test.models.operation.*" />
+          <option name="PATTERN" value="cl.uchile.dcc.scrabble.test.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="cl.uchile.dcc.scrabble.test.models.operation.arithmetic" />
-      <option name="MAIN_CLASS_NAME" value="cl.uchile.dcc.scrabble.test.models.operation.arithmetic.AddTest" />
-      <option name="METHOD_NAME" value="evaluateTest" />
+      <option name="PACKAGE_NAME" value="cl.uchile.dcc.scrabble.test.controller" />
+      <option name="MAIN_CLASS_NAME" value="cl.uchile.dcc.scrabble.test.controller.ASTControllerTest" />
+      <option name="METHOD_NAME" value="addLeftOperandTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in scrabble.main" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="scrabble.main" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+    <configuration name="ASTControllerTest.addRightOperandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="scrabble.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cl.uchile.dcc.scrabble.test.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cl.uchile.dcc.scrabble.test.controller" />
+      <option name="MAIN_CLASS_NAME" value="cl.uchile.dcc.scrabble.test.controller.ASTControllerTest" />
+      <option name="METHOD_NAME" value="addRightOperandTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in scrabble.test (2)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ASTControllerTest.addTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="scrabble.test" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cl.uchile.dcc.scrabble.test.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cl.uchile.dcc.scrabble.test.controller" />
+      <option name="MAIN_CLASS_NAME" value="cl.uchile.dcc.scrabble.test.controller.ASTControllerTest" />
+      <option name="METHOD_NAME" value="addTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -169,11 +214,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in scrabble.test" />
-        <item itemvalue="JUnit.All in scrabble.test (2)" />
         <item itemvalue="Application.Scrabble" />
-        <item itemvalue="JUnit.All in scrabble.main" />
-        <item itemvalue="JUnit.AddTest.evaluateTest" />
+        <item itemvalue="JUnit.All in scrabble.test" />
+        <item itemvalue="JUnit.ASTControllerTest.addRightOperandTest" />
+        <item itemvalue="JUnit.ASTControllerTest.addLeftOperandTest" />
+        <item itemvalue="JUnit.ASTControllerTest.addTest" />
       </list>
     </recent_temporary>
   </component>
@@ -230,6 +275,20 @@
       <workItem from="1625710442172" duration="6800000" />
       <workItem from="1625775583218" duration="20900000" />
       <workItem from="1625803519694" duration="82000" />
+      <workItem from="1625805414996" duration="1196000" />
+      <workItem from="1625807557247" duration="9000" />
+      <workItem from="1626469976397" duration="16304000" />
+      <workItem from="1626576224616" duration="14535000" />
+      <workItem from="1626631732455" duration="9535000" />
+      <workItem from="1626712697123" duration="29862000" />
+      <workItem from="1626761209257" duration="3051000" />
+      <workItem from="1626921583582" duration="5110000" />
+      <workItem from="1626977802601" duration="29725000" />
+      <workItem from="1627086751221" duration="10209000" />
+      <workItem from="1627160388994" duration="33606000" />
+      <workItem from="1627240632916" duration="22106000" />
+      <workItem from="1627267281677" duration="7549000" />
+      <workItem from="1627338581619" duration="8985000" />
     </task>
     <servers />
   </component>
@@ -253,10 +312,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1620487628782" />
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1625795892541">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1627089543156">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1625795892541" />
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1627089543156" />
     <state x="384" y="185" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1622434856475">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -273,34 +332,54 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="155" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.680@0.0.1280.680" timestamp="1624244034498" />
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1624243459938">
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1626592071550">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1624243459938" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1626592071550" />
     <state x="421" y="67" key="FileChooserDialogImpl" timestamp="1625797791556">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="67" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1625797791556" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1625803602624">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1627347654730">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1625803602624" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1625803602624">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1627347654730" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1627347654725">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1625803602624" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1625803602624">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1627347654725" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1627347654725">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1625803602624" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1625803602624">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1627347654725" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1627347654725">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1625803602624" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1620488131599">
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1627347654725" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1626598365934">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1620488131599" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1626598365934" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1626598365934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1626598365934" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1626598365934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1626598365934" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1626598365934">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1626598365934" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1625805852881">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1625805852881" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1625805823860">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1625805823860" />
     <state x="412" y="109" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1624492267139">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -313,20 +392,17 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="417" y="89" key="refactoring.ChangeSignatureDialog/0.0.1280.680@0.0.1280.680" timestamp="1624258801682" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1625548314642">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1627268837708">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1625548314642" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1625790035046">
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1627268837708" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1627273930810">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1625790035046" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1627273930810" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/scrabble$INumberTest.ic" NAME="INumberTest Coverage Results" MODIFIED="1621548305081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/scrabble$ScrabbleBinaryTest.ic" NAME="ScrabbleBinaryTest Coverage Results" MODIFIED="1620633517972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/scrabble$INumberTest_subtractToFloatTest.ic" NAME="INumberTest.subtractToFloatTest Coverage Results" MODIFIED="1621463307508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
@@ -341,47 +417,53 @@
     <SUITE FILE_PATH="coverage/scrabble$AbstractScrabbleTypeTest_aux.ic" NAME="AbstractScrabbleTypeTest.aux Coverage Results" MODIFIED="1620632051101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/scrabble$cl_uchile_dcc_scrabble_in_scrabble_main.ic" NAME="cl.uchile.dcc.scrabble in scrabble.main Coverage Results" MODIFIED="1622434596382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>cl.uchile.dcc.scrabble.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/scrabble$All_in_scrabble_test__3_.ic" NAME="All in scrabble.test (3) Coverage Results" MODIFIED="1622435824274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/scrabble$INumberTest_sumTest.ic" NAME="INumberTest.sumTest Coverage Results" MODIFIED="1621451988942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/scrabble$Scrabble.ic" NAME="Scrabble Coverage Results" MODIFIED="1625198944429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cl.uchile.dcc.scrabble.gui.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/scrabble$ScrabbleIntTest.ic" NAME="ScrabbleIntTest Coverage Results" MODIFIED="1620547022717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/scrabble$INumberTest_sumBinaryTest.ic" NAME="INumberTest.sumBinaryTest Coverage Results" MODIFIED="1621487568090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/scrabble$INumberTest_divideToIntTest.ic" NAME="INumberTest.divideToIntTest Coverage Results" MODIFIED="1621534759841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/scrabble$ScrabbleIntTest_constructorTest.ic" NAME="ScrabbleIntTest.constructorTest Coverage Results" MODIFIED="1620648011742" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/scrabble$All_in_scrabble_test.ic" NAME="All in scrabble.test Coverage Results" MODIFIED="1622434717975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/scrabble$INumberTest_multiplyIntTest.ic" NAME="INumberTest.multiplyIntTest Coverage Results" MODIFIED="1621546873301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/scrabble$All_in_scrabble_test__1_.ic" NAME="All in scrabble.test (1) Coverage Results" MODIFIED="1622434759713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/scrabble$All_in_scrabble_main.ic" NAME="All in scrabble.main Coverage Results" MODIFIED="1624485451846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/scrabble$All_in_scrabble_test__4_.ic" NAME="All in scrabble.test (4) Coverage Results" MODIFIED="1623818367445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/scrabble$ScrabbleBinaryTest_transformToScrabbleIntTest.ic" NAME="ScrabbleBinaryTest.transformToScrabbleIntTest Coverage Results" MODIFIED="1621531718661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/scrabble$INumberTest_sumIntTest.ic" NAME="INumberTest.sumIntTest Coverage Results" MODIFIED="1621395316040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/scrabble$ScrabbleBinaryTest.ic" NAME="ScrabbleBinaryTest Coverage Results" MODIFIED="1620633517972" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/scrabble$ASTTest.ic" NAME="ASTTest Coverage Results" MODIFIED="1627273524319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cl.uchile.dcc.scrabble.test.controller.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/scrabble$cl_uchile_dcc_scrabble_in_scrabble_main.ic" NAME="cl.uchile.dcc.scrabble in scrabble.main Coverage Results" MODIFIED="1622434596382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cl.uchile.dcc.scrabble.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/scrabble$All_in_scrabble_test__3_.ic" NAME="All in scrabble.test (3) Coverage Results" MODIFIED="1622435824274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/scrabble$ScrabbleIntTest.ic" NAME="ScrabbleIntTest Coverage Results" MODIFIED="1620547022717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/scrabble$INumberTest_divideToIntTest.ic" NAME="INumberTest.divideToIntTest Coverage Results" MODIFIED="1621534759841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/scrabble$All_in_scrabble_test.ic" NAME="All in scrabble.test Coverage Results" MODIFIED="1627343602174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/scrabble$ScrabbleIntTest_toStringTest.ic" NAME="ScrabbleIntTest.toStringTest Coverage Results" MODIFIED="1620506418959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/scrabble$ScrabbleStringTest_sumTest.ic" NAME="ScrabbleStringTest.sumTest Coverage Results" MODIFIED="1621824009242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/scrabble$ScrabbleBinaryTest_transformToScrabbleIntTest.ic" NAME="ScrabbleBinaryTest.transformToScrabbleIntTest Coverage Results" MODIFIED="1621531718661" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/scrabble$All_in_scrabble_test__2_.ic" NAME="All in scrabble.test (2) Coverage Results" MODIFIED="1625799228567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/scrabble$INumberTest_sumIntTest.ic" NAME="INumberTest.sumIntTest Coverage Results" MODIFIED="1621395316040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>cl.uchile.dcc.scrabble.test.*</FILTER>
-    </SUITE>
   </component>
 </project>
