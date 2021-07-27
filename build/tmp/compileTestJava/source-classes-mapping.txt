@@ -26,6 +26,8 @@ cl/uchile/dcc/scrabble/test/models/type/ITypeTest.java
  cl.uchile.dcc.scrabble.test.models.type.ITypeTest
 cl/uchile/dcc/scrabble/test/models/type/ScrabbleFloatTest.java
  cl.uchile.dcc.scrabble.test.models.type.ScrabbleFloatTest
+cl/uchile/dcc/scrabble/test/controller/ScrabbleTypesTest.java
+ cl.uchile.dcc.scrabble.test.controller.ScrabbleTypesTest
 cl/uchile/dcc/scrabble/test/models/operation/logical/LogicalOperationTest.java
  cl.uchile.dcc.scrabble.test.models.operation.logical.LogicalOperationTest
 cl/uchile/dcc/scrabble/test/models/operation/VariableTest.java
@@ -46,6 +48,8 @@ cl/uchile/dcc/scrabble/test/models/operation/constantFactory/StringFactoryTest.j
  cl.uchile.dcc.scrabble.test.models.operation.constantFactory.StringFactoryTest
 cl/uchile/dcc/scrabble/test/models/type/IStandardTest.java
  cl.uchile.dcc.scrabble.test.models.type.IStandardTest
+cl/uchile/dcc/scrabble/test/controller/ASTTest.java
+ cl.uchile.dcc.scrabble.test.controller.ASTTest
 cl/uchile/dcc/scrabble/test/models/operation/constant/FloatConstantTest.java
  cl.uchile.dcc.scrabble.test.models.operation.constant.FloatConstantTest
 cl/uchile/dcc/scrabble/test/models/operation/logical/NotTest.java
