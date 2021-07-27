@@ -12,6 +12,41 @@ _CC3002 Metodologías de Diseño y programación_ of the
 _University of Chile_.
 
 ---
+For running the program run Scrabble.java at src/main/java/cl/uchile/dcc/scrabble/gui/Scrabble.java
+![start1](https://github.com/nizent/images/blob/main/run.png?raw=true)
+# View 
+Once yo run the program there will appear this window, on the left you have the operators and constants inside 
+a scroll pane.
+![start1](https://github.com/nizent/images/blob/main/img1.png?raw=true)
+You have to scroll to see the other elements
+![start1](https://github.com/nizent/images/blob/main/img2.png?raw=true)
+Then, to create a new element do double click over the element, and then the element will appear
+on the right side
+![start1](https://github.com/nizent/images/blob/main/img3.png?raw=true)
+Once the element appears, you can drag it
+![start1](https://github.com/nizent/images/blob/main/img4.png?raw=true)
+And you can set the constant value, by putting some text inside the textfield
+![start1](https://github.com/nizent/images/blob/main/img5.png?raw=true)
+If you need to know the element value, just double click over the draggable element and then will appear
+a green label containing the value
+![start1](https://github.com/nizent/images/blob/main/img6.png?raw=true)
+
+**Creating operations**
+You can create operations, first, double click over the operation you want in the scroll pane.
+![start1](https://github.com/nizent/images/blob/main/img7.png?raw=true) 
+next, you have to insert the element to the left or right pane of the operation, drag the element to the left or right pane and 
+it will be set as left/right operand respectively
+![start1](https://github.com/nizent/images/blob/main/img8.png?raw=true)
+You can evaluate the operation with a double click over the operation region (blue region), i recommend doing double click 
+on the symbol.  If the operation is not well built it will throw the message "Tree not correctly built".
+![start1](https://github.com/nizent/images/blob/main/img9.png?raw=true) 
+In the last image, it is not well built because it doesn't have the right operand, it must be inserted, like in
+the next image
+![start1](https://github.com/nizent/images/blob/main/img10.png?raw=true)
+And you can do any operation you want  
+![start1](https://github.com/nizent/images/blob/main/img11.png?raw=true)
+In the last image, the operation was (99+"011")/9 = (99+3)/9 = 11.333
+# Model
 # Types
 Dear user, the types are defined by 5 usable classes. Every class has it own getters and setters called
 Value() and setValue(type value), and they are compared by its value overriding equals(Object obj) method. 
@@ -275,6 +310,7 @@ BinFactory.getConstant(new ScrabbleBinary("111"));
 ```
 And that instance will be saved in the class. 
 
+# Controller
 # Operations implemented correctly
 
 For this purpose, there were created 
