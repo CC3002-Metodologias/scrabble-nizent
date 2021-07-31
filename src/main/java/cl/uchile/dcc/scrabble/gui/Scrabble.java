@@ -12,6 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -100,6 +102,21 @@ public class Scrabble extends Application {
 
     root.getChildren().add(menuContainer);
     root.getChildren().add(board);
+    Circle basket = new Circle();
+    basket.setCenterX(600);
+    basket.setCenterY(600);
+    basket.setRadius(50);
+    basket.setFill(Color.RED);
+    basket.setOpacity(0.7);
+    Label deleteText = new Label("DROP & DELETE");
+    deleteText.relocate(557,580);
+    deleteText.setStyle("-fx-text-fill: white;");
+    basket.setOnMouseDragReleased(event -> {
+        Node source = (Node) event.getGestureSource();
+        root.getChildren().remove(source.getParent());
+    });
+    root.getChildren().add(basket);
+    root.getChildren().add(deleteText);
 
     scene = new Scene(root, 1000, 600);
     root.setStyle("-fx-background-color: white");
