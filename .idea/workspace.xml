@@ -145,17 +145,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ASTControllerTest.addLeftOperandTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="scrabble.test" />
       <extension name="coverage">
@@ -289,6 +278,8 @@
       <workItem from="1627240632916" duration="22106000" />
       <workItem from="1627267281677" duration="7549000" />
       <workItem from="1627338581619" duration="8985000" />
+      <workItem from="1627348841114" duration="35000" />
+      <workItem from="1627684732876" duration="4430000" />
     </task>
     <servers />
   </component>
@@ -340,22 +331,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="67" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1625797791556" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1627347654730">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1627691241924">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1627347654730" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1627347654725">
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1627691241924" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1627691241923">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1627347654725" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1627347654725">
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1627691241923" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1627691241923">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1627347654725" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1627347654725">
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1627691241923" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1627691241923">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1627347654725" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1627691241923" />
     <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1626598365934">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
